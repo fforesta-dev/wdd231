@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 231 | Francesco Foresta</title>
+    <meta name="description" content="WDD 231 Course Home Page for Francesco Foresta">
+    <meta name="author" content="Francesco Foresta">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses-data.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Site Logo" width="50" height="50">
+        <span>Francesco Foresta</span>
+        <button id="nav-button" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="chamber/">Chamber Project</a></li>
+            <li><a href="project/">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="content">
+                <p>Hi! My name is Francesco Foresta, and I’m currently studying Web Frontend Development I (WDD 231)
+                    through BYU-Idaho. I’m passionate about creating clean, user-friendly, and responsive websites that
+                    make information easy to access and enjoyable to explore.<br><br>
+                    I have a background in Learning & Development and translation, where I’ve managed large training
+                    projects and worked with multilingual content. Those experiences have taught me how important good
+                    design, accessibility, and clear communication are—skills I now apply to my web development
+                    journey.<br><br>
+                    Through this course, I’m excited to strengthen my skills in HTML, CSS, and JavaScript, build
+                    interactive projects, and prepare for a future career that blends technology, creativity, and
+                    learning.<br><br>
+                    When I’m not coding, I enjoy serving others, playing games, exploring new tools, and traveling to
+                    discover new cultures.</p>
+            </div>
+        </section>
+
+        <section id="photo">
+            <h2>Student Photo</h2>
+            <div class="content">
+                <img src="images/profile-photo.webp" alt="Francesco Foresta - Student Photo" loading="lazy">
+            </div>
+        </section>
+
+        <section id="courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="content">
+                <div class="filters">
+                    <button id="all" class="filter-btn active">All</button>
+                    <button id="cse" class="filter-btn">CSE</button>
+                    <button id="wdd" class="filter-btn">WDD</button>
+                </div>
+                <div id="course-container"></div>
+                <p id="credits">The total credits for courses listed above is <span id="credit-count">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/francesco-foresta" target="_blank" aria-label="LinkedIn Profile">
+            <img src="images/linkedin.svg" alt="LinkedIn" width="32" height="32">
+        </a>
+        <a href="https://github.com/fforesta-dev/wdd231" target="_blank" aria-label="GitHub Profile">
+            <img src="images/github.svg" alt="GitHub" width="32" height="32">
+        </a>
+        <a href="https://www.instagram.com/photosbyf.f/" target="_blank" aria-label="Instagram Profile">
+            <img src="images/instagram.svg" alt="Instagram" width="32" height="32">
+        </a>
+    </div>
+
+    <footer>
+        <p>© <span id="currentyear"></span> • Francesco Foresta • Narni, Italy</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
