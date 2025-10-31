@@ -99,6 +99,7 @@ button,
 [type="reset"],
 [type="submit"] {
     -webkit-appearance: button;
+    appearance: button;
 }
 
 button::-moz-focus-inner,
@@ -150,11 +151,13 @@ textarea {
 
 [type="search"] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px;
 }
 
 [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
+    appearance: none;
 }
 
 ::-webkit-file-upload-button {
@@ -179,18 +182,18 @@ template {
 }
 
 :root {
-    --primary-color: #7c2d12;
-    --secondary-color: #a8a29e;
+    --primary-color: #5d1f08;
+    --secondary-color: #57534e;
     --accent-color: #92400e;
-    --success-color: #059669;
-    --success-hover: #047857;
-    --text-color: #44403c;
-    --text-light: #78716c;
+    --success-color: #065f46;
+    --success-hover: #064e3b;
+    --text-color: #1c1917;
+    --text-light: #57534e;
     --background: #fafaf9;
     --white: #ffffff;
     --light-gray: #f5f5f4;
     --border-color: #d6d3d1;
-    --hover-color: #dc2626;
+    --hover-color: #b91c1c;
     --hover-bg: #fef2f2;
     --border-radius: 8px;
     --box-shadow: 0 2px 8px rgba(124, 45, 18, 0.1);
@@ -457,7 +460,7 @@ section .content {
     top: 0.5rem;
     right: 0.5rem;
     background-color: var(--white);
-    color: var(--success-color);
+    color: #064e3b;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -473,7 +476,7 @@ section .content {
     text-align: center;
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--primary-color);
+    color: var(--text-color);
     margin: 1rem;
     padding-bottom: 1rem;
 }
@@ -491,7 +494,7 @@ section .content {
 
 .social-icons a {
     transition: var(--transition);
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .social-icons a:hover {
@@ -516,7 +519,7 @@ footer {
 footer p {
     margin: 0.25rem 0;
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 footer p:first-of-type {
