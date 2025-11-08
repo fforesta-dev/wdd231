@@ -109,8 +109,13 @@ header h1 {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.75rem;
     z-index: 2500;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .hamburger span {
@@ -122,11 +127,14 @@ header h1 {
     -webkit-transition: 0.3s;
     border-radius: 2px;
     display: block;
+    transform-origin: center;
+    -webkit-transform-origin: center;
 }
 
 /* Hamburger animation to X - Higher specificity for mobile */
 .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px) !important;
+    transform: rotate(45deg) translate(6px, 6px) !important;
+    transform-origin: center !important;
 }
 
 .hamburger.open span:nth-child(2) {
@@ -134,7 +142,8 @@ header h1 {
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px) !important;
+    transform: rotate(-45deg) translate(6px, -6px) !important;
+    transform-origin: center !important;
 }
 
 main {
@@ -348,9 +357,13 @@ footer>* {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 0.25rem;
+        padding: 0.75rem;
         position: relative;
         z-index: 3000;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
     }
 
     .hamburger span {
@@ -361,6 +374,8 @@ footer>* {
         transition: 0.3s;
         -webkit-transition: 0.3s;
         display: block;
+        transform-origin: center;
+        -webkit-transform-origin: center;
     }
 
     .navigation {
@@ -411,8 +426,10 @@ footer>* {
     }
 
     .hamburger.open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px) !important;
-        -webkit-transform: rotate(45deg) translate(5px, 5px) !important;
+        transform: rotate(45deg) translate(6px, 6px) !important;
+        -webkit-transform: rotate(45deg) translate(6px, 6px) !important;
+        transform-origin: center !important;
+        -webkit-transform-origin: center !important;
     }
 
     .hamburger.open span:nth-child(2) {
@@ -422,6 +439,8 @@ footer>* {
     .hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px) !important;
         -webkit-transform: rotate(-45deg) translate(6px, -6px) !important;
+        transform-origin: center !important;
+        -webkit-transform-origin: center !important;
     }
 
     /* Footer fix */
