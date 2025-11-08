@@ -479,11 +479,11 @@ footer>* {
     :root {
         --header-height: 70px;
     }
-    
+
     header {
         padding-right: 3.5rem !important;
     }
-    
+
     header h1 {
         font-size: 0.9rem;
         margin-right: 0.5rem !important;
@@ -506,26 +506,26 @@ footer>* {
     :root {
         --header-height: 90px;
     }
-    
+
     header {
         height: var(--header-height) !important;
         padding: 1rem 2rem !important;
         align-items: center !important;
     }
-    
+
     .logo {
         width: 70px !important;
         height: 70px !important;
         padding: 3px !important;
     }
-    
+
     .hamburger {
         right: 2rem !important;
         padding: 0.75rem !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
     }
-    
+
     .navigation {
         position: fixed !important;
         top: var(--header-height) !important;
@@ -536,12 +536,12 @@ footer>* {
         z-index: 2500 !important;
         display: none !important;
     }
-    
+
     .navigation.open {
         display: flex !important;
         flex-direction: column !important;
     }
-    
+
     .navigation ul {
         display: flex !important;
         flex-direction: column !important;
@@ -549,11 +549,11 @@ footer>* {
         margin: 0 !important;
         padding: 0 !important;
     }
-    
+
     .navigation li {
         border-bottom: 1px solid #ddd !important;
     }
-    
+
     .navigation a {
         color: var(--primary-color) !important;
         padding: 1rem !important;
@@ -566,24 +566,24 @@ footer>* {
     :root {
         --header-height: 75px;
     }
-    
+
     header {
         padding: 0.75rem 4rem 0.75rem 1rem !important;
         height: var(--header-height) !important;
     }
-    
+
     .logo {
         width: 50px !important;
         height: 50px !important;
         padding: 2px !important;
     }
-    
+
     header h1 {
         font-size: 0.8rem !important;
         margin-left: 0.25rem !important;
         margin-right: 0.5rem !important;
     }
-    
+
     .hamburger {
         right: 0.75rem !important;
         top: 50% !important;
@@ -592,18 +592,18 @@ footer>* {
         width: 40px !important;
         height: 40px !important;
     }
-    
+
     .hamburger span {
         width: 20px !important;
         height: 2px !important;
         margin: 3px 0 !important;
     }
-    
+
     .hamburger.open span:nth-child(1) {
         margin-left: -10px !important;
         margin-top: -1px !important;
     }
-    
+
     .hamburger.open span:nth-child(3) {
         margin-left: -10px !important;
         margin-top: -1px !important;
@@ -615,13 +615,13 @@ footer>* {
     :root {
         --header-height: 80px;
     }
-    
+
     /* Force mobile navigation for Surface Duo landscape */
     .hamburger {
         display: flex !important;
         right: 2rem !important;
     }
-    
+
     .navigation ul {
         display: none !important;
         position: absolute !important;
@@ -633,11 +633,11 @@ footer>* {
         box-shadow: var(--shadow) !important;
         z-index: 1500 !important;
     }
-    
+
     .navigation.open ul {
         display: flex !important;
     }
-    
+
     .navigation a {
         color: var(--white) !important;
         padding: 1rem !important;
@@ -649,7 +649,7 @@ footer>* {
     :root {
         --header-height: 120px;
     }
-    
+
     .hamburger {
         display: none;
     }
