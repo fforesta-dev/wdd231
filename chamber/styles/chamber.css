@@ -2,7 +2,7 @@
     --primary-color: #2c5530;
     --secondary-color: #4a7c59;
     --accent-color: #8fbc8f;
-    --accent-light: #b8d4b8; /* Lighter accent for better contrast on dark backgrounds */
+    --accent-light: #b8d4b8;
     --text-color: #333;
     --light-gray: #f5f5f5;
     --white: #ffffff;
@@ -147,7 +147,6 @@ header h1 {
     position: relative;
 }
 
-/* Hamburger animation to X - Simplified approach */
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) !important;
     position: absolute !important;
@@ -355,7 +354,6 @@ footer>* {
     margin-bottom: 0.25rem;
 }
 
-/* ---------- MOBILE NAVIGATION FIX ---------- */
 @media (max-width: 480px) {
     header {
         overflow: visible;
@@ -477,7 +475,6 @@ footer>* {
         margin-top: -1.5px !important;
     }
 
-    /* Footer fix */
     footer {
         text-align: center;
         justify-items: center;
@@ -489,7 +486,6 @@ footer>* {
     }
 }
 
-/* ---------- SMALL SCREENS ---------- */
 @media (max-width: 400px) {
     :root {
         --header-height: 70px;
@@ -509,14 +505,12 @@ footer>* {
     }
 }
 
-/* ---------- TABLET ---------- */
 @media (min-width: 481px) and (max-width: 767px) {
     :root {
         --header-height: 100px;
     }
 }
 
-/* ---------- SURFACE DUO AND FOLDABLES ---------- */
 @media (min-width: 540px) and (max-width: 720px) {
     :root {
         --header-height: 90px;
@@ -576,7 +570,6 @@ footer>* {
     }
 }
 
-/* ---------- Z FOLD 5 AND TALL FOLDABLES ---------- */
 @media (min-width: 344px) and (max-width: 400px) and (min-height: 800px) {
     :root {
         --header-height: 75px;
@@ -625,13 +618,11 @@ footer>* {
     }
 }
 
-/* ---------- SURFACE DUO LANDSCAPE ---------- */
 @media (min-width: 720px) and (max-width: 1114px) and (max-height: 540px) {
     :root {
         --header-height: 80px;
     }
 
-    /* Force mobile navigation for Surface Duo landscape */
     .hamburger {
         display: flex !important;
         right: 2rem !important;
@@ -659,7 +650,6 @@ footer>* {
     }
 }
 
-/* ---------- DESKTOP ---------- */
 @media (min-width: 768px) {
     :root {
         --header-height: 120px;

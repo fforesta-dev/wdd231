@@ -11,17 +11,14 @@ if (menuToggle && navigation) {
         navigation.classList.toggle('open');
         menuToggle.classList.toggle('open');
 
-        // Force reflow for mobile browsers
         menuToggle.offsetHeight;
     });
 
-    // Also handle touch events for better mobile support
     menuToggle.addEventListener('touchend', (e) => {
         e.preventDefault();
         navigation.classList.toggle('open');
         menuToggle.classList.toggle('open');
 
-        // Force reflow for mobile browsers
         menuToggle.offsetHeight;
     });
 }
