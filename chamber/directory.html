@@ -9,33 +9,83 @@
         content="Browse our comprehensive directory of local businesses and organizations that are members of the Terni Chamber of Commerce. Find contact information, services, and connect with community business leaders.">
     <meta name="author" content="Francesco Foresta">
     <meta property="og:title" content="Business Directory | Terni Chamber of Commerce">
+    <meta property="og:type" content="website">
     <meta property="og:description"
         content="Browse our comprehensive directory of local businesses and organizations that are members of the Terni Chamber of Commerce. Find contact information, services, and connect with community business leaders.">
     <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/chamber/images/hero.webp">
     <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/directory.html">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
     <link rel="icon" href="favicon.ico">
+    <script src="scripts/chamber.js" defer></script>
 </head>
 
 <body>
+    <!-- Header with logo, title, navigation, and hamburger all in one row -->
     <header>
-        <h1>Welcome to My Blog</h1>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+        <img src="images/logo.webp" alt="Terni Chamber of Commerce Logo" width="100" height="100" class="logo">
+        <h1>Terni Chamber of Commerce</h1>
+
+        <!-- Navigation inside header -->
+        <nav id="navigation" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
         </nav>
+
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <main>
-        <article>
-            <h2>FILL THIS</h2>
-            <p>This is the content of my blog post.</p>
-        </article>
+        <section class="directory-header">
+            <h2>Business Directory</h2>
+            <p>Discover local businesses and organizations that are proud members of our chamber</p>
+        </section>
+
+        <section class="directory-controls">
+            <button id="grid-view" class="view-btn active" aria-label="Grid view">Grid</button>
+            <button id="list-view" class="view-btn" aria-label="List view">List</button>
+        </section>
+
+        <section id="directory-container" class="grid-view">
+            <!-- Business cards will be dynamically populated here -->
+        </section>
     </main>
 
     <footer>
-        <p>Copyright 2024 My Blog</p>
+        <div class="footer-address">
+            <h3>Terni Chamber of Commerce</h3>
+            <p>Largo Don Minzoni 6<br>
+                05100 Terni, Italy<br>
+                urp.pg@umbria.camcom.it<br>
+                +39 0744 4891</p>
+        </div>
+
+        <div class="footer-social">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube-icon.svg" alt="YouTube" width="32" height="32">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter-icon.svg" alt="Twitter" width="32" height="32">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin-icon.svg" alt="LinkedIn" width="32" height="32">
+            </a>
+        </div>
+
+        <div class="footer-attribution">
+            <p>WDD231 Class Project</p>
+            <p>Francesco Foresta</p>
+            <p>&copy; <span id="currentyear"></span> Terni Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
     </footer>
 </body>
 

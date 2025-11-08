@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Acciai Speciali Terni S.p.a.",
+        "address": "Viale Benedetto Brin 218, 05100 Terni, Italy",
+        "phone": "+39 0744 4901",
+        "website": "https://www.acciaiterni.it/",
+        "image": "acciai-speciali.webp",
+        "membershipLevel": 3,
+        "description": "Italian leader in stainless-steel flat products and integrated steelmaking with global reach."
+    },
+    {
+        "name": "Faurecia Emissions Control Technologies Italy S.r.l.",
+        "address": "Via Bruno Capponi 45, 05100 Terni, Italy",
+        "phone": "+39 0744 390711",
+        "website": "https://www.forvia.com/en",
+        "image": "faurecia.webp",
+        "membershipLevel": 2,
+        "description": "Automotive supplier in Terni producing emissions-control and engine components as part of the FORVIA group."
+    },
+    {
+        "name": "Eskigel S.r.l.",
+        "address": "Via Augusto Vanzetti 11, 05100 Terni, Italy",
+        "phone": "+39 0744 612111",
+        "website": "http://www.froneri.com/",
+        "image": "eskigel.webp",
+        "membershipLevel": 2,
+        "description": "Terni-based manufacturer of ice-cream and frozen dessert products."
+    },
+    {
+        "name": "Lenergia S.p.a.",
+        "address": "Strada Di Cardeto 61, 05100 Terni, Italy",
+        "phone": "+39 800 736 330",
+        "website": "https://www.lenergia.eu/",
+        "image": "lenergia.webp",
+        "membershipLevel": 1,
+        "description": "Energy supplier founded in Terni offering electricity and gas services for households and businesses."
+    },
+    {
+        "name": "Superconti Supermercati Terni S.r.l.",
+        "address": "Strada Delle Campore 17, 05100 Terni, Italy",
+        "phone": "+39 0744 803911",
+        "website": "https://www.superconti.eu/",
+        "image": "superconti.webp",
+        "membershipLevel": 2,
+        "description": "Retail supermarket chain in Terni offering groceries, fresh produce and household goods."
+    },
+    {
+        "name": "Algeco S.p.a.",
+        "address": "Via Enrico Fermi 1, 05029 San Gemini, Italy",
+        "phone": "+39 0744 243444",
+        "website": "https://algeco.it/",
+        "image": "algeco.webp",
+        "membershipLevel": 1,
+        "description": "Provider of modular building solutions and temporary structures including portable cabins and offices."
+    },
+    {
+        "name": "Paciautoquattro S.p.a.",
+        "address": "Via Bruno Capponi 25, 05100 Terni, Italy",
+        "phone": "+39 0744 300095",
+        "website": "https://www.paciautoquattro.com/",
+        "image": "paciautoquattro.webp",
+        "membershipLevel": 3,
+        "description": "Automotive dealership in Terni selling new and used cars and providing after-sales service."
+    },
+    {
+        "name": "Umbria Energy S.p.a.",
+        "address": "Via Giordano Bruno 7, 05100 Terni, Italy",
+        "phone": "+39 800 060 010",
+        "website": "http://www.umbriaenergy.it/",
+        "image": "umbria-energy.webp",
+        "membershipLevel": 2,
+        "description": "Regional energy company supplying electricity, gas and energy-efficiency services."
+    }
+]
