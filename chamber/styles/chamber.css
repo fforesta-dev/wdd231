@@ -30,14 +30,13 @@ body {
 
 header {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
     padding: 1rem;
     background-color: var(--primary-color);
     color: var(--white);
     position: relative;
+    z-index: 2000;
 }
 
 .logo {
@@ -53,7 +52,7 @@ header h1 {
     font-size: 1.25rem;
     color: var(--white);
     font-weight: bold;
-    margin: 0;
+    margin-left: 0.5rem;
     flex: 1;
 }
 
@@ -111,6 +110,7 @@ header h1 {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 2500;
 }
 
 .hamburger span {
@@ -306,53 +306,120 @@ footer>* {
     margin-bottom: 0.25rem;
 }
 
+/* ---------- MOBILE NAVIGATION FIX ---------- */
 @media (max-width: 480px) {
     header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        overflow: visible;
         position: relative;
-    }
-
-    .hamburger {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        align-self: flex-end;
-    }
-
-    .navigation ul {
-        top: 3.5rem;
-        right: 1rem;
-        border-radius: 6px;
-    }
-
-    header h1 {
-        flex: none;
-        width: 100%;
-        font-size: 1.1rem;
-        margin-top: 4rem;
+        z-index: 2000;
     }
 
     .logo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 0.5rem;
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        padding: 3px;
     }
 
+    header h1 {
+        flex: 1;
+        font-size: 1rem;
+        color: var(--white);
+        margin-left: 0.5rem;
+    }
+
+    .hamburger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+        position: relative;
+        z-index: 3000;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--white);
+        margin: 4px 0;
+        transition: 0.3s;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 70px;
+        /* directly below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        z-index: 2500;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .navigation li {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navigation a {
+        display: block;
+        color: var(--primary-color);
+        text-align: left;
+        padding: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .navigation a:hover {
+        background-color: var(--light-gray);
+    }
+
+    .navigation .current a {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Footer fix */
     footer {
         text-align: center;
+        justify-items: center;
     }
 
     .footer-attribution {
-        justify-self: center;
         text-align: center;
+        justify-self: center;
     }
 }
 
+/* ---------- SMALL SCREENS ---------- */
 @media (max-width: 400px) {
     header h1 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .directory-header h2 {
@@ -360,6 +427,7 @@ footer>* {
     }
 }
 
+/* ---------- DESKTOP ---------- */
 @media (min-width: 768px) {
     .hamburger {
         display: none;
@@ -413,8 +481,6 @@ footer>* {
     .logo {
         width: 100px;
         height: 100px;
-        border-radius: 8px;
-        padding: 5px;
     }
 
     header h1 {
