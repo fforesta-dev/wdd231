@@ -1,26 +1,33 @@
 :root {
+    /* Core colors */
     --primary-color: #2c5530;
     --secondary-color: #4a7c59;
     --accent-color: #8fbc8f;
     --accent-light: #b8d4b8;
     --text-color: #333;
     --light-gray: #f5f5f5;
-    --white: #ffffff;
+    --white: #fff;
+    --black: #000;
     --border-color: #ddd;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --header-height: 80px;
+
+    /* Membership levels */
     --gold: #ffd700;
     --silver: #c0c0c0;
     --bronze: #cd7f32;
+
+    /* Interactive states */
+    --button-active-bg: #1a3d1d;
     --light-border: #f0f0f0;
+    --hover-overlay: rgba(255, 255, 255, 0.2);
+
+    /* Shadows and borders */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
     --dropdown-border: rgba(255, 255, 255, 0.1);
     --dropdown-border-mobile: rgba(255, 255, 255, 0.3);
-    --hover-overlay: rgba(255, 255, 255, 0.2);
-    --shadow-dark: rgba(0, 0, 0, 0.3);
-    --gold-text: #000000;
-    --silver-text: #000000;
-    --bronze-text: #ffffff;
-    --button-active-bg: #1a3d1d;
+
+    /* Layout */
+    --header-height: 80px;
 }
 
 * {
@@ -151,26 +158,25 @@ header h1 {
     position: relative;
 }
 
+/* Hamburger X animation */
 .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    margin-left: -12.5px !important;
-    margin-top: -1.5px !important;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1.5px 0 0 -12.5px;
 }
 
 .hamburger.open span:nth-child(2) {
-    opacity: 0 !important;
+    opacity: 0;
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    margin-left: -12.5px !important;
-    margin-top: -1.5px !important;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1.5px 0 0 -12.5px;
 }
 
 main {
@@ -308,20 +314,17 @@ main {
 
 .level-1 {
     background-color: var(--gold);
-    color: var(--gold-text) !important;
-    font-weight: 600;
+    color: var(--black);
 }
 
 .level-2 {
     background-color: var(--silver);
-    color: var(--silver-text) !important;
-    font-weight: 600;
+    color: var(--black);
 }
 
 .level-3 {
     background-color: var(--bronze);
-    color: var(--bronze-text) !important;
-    font-weight: 600;
+    color: var(--white);
 }
 
 footer {
@@ -477,29 +480,7 @@ footer>* {
         font-weight: 600;
     }
 
-    .hamburger.open span:nth-child(1) {
-        transform: rotate(45deg) !important;
-        -webkit-transform: rotate(45deg) !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        margin-left: -12.5px !important;
-        margin-top: -1.5px !important;
-    }
-
-    .hamburger.open span:nth-child(2) {
-        opacity: 0 !important;
-    }
-
-    .hamburger.open span:nth-child(3) {
-        transform: rotate(-45deg) !important;
-        -webkit-transform: rotate(-45deg) !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        margin-left: -12.5px !important;
-        margin-top: -1.5px !important;
-    }
+    /* Hamburger animation inherited from base styles */
 
     footer {
         text-align: center;
@@ -512,6 +493,7 @@ footer>* {
     }
 }
 
+/* Consolidated responsive styles */
 @media (max-width: 400px) {
     :root {
         --header-height: 70px;
