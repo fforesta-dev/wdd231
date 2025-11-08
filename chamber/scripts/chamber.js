@@ -7,6 +7,7 @@ const navigation = document.getElementById('navigation');
 if (menuToggle && navigation) {
     menuToggle.addEventListener('click', () => {
         navigation.classList.toggle('open');
+        menuToggle.classList.toggle('open');
     });
 }
 

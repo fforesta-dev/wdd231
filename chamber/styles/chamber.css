@@ -65,14 +65,14 @@ header h1 {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     right: 0;
     background-color: var(--secondary-color);
     margin: 0;
     padding: 0;
     min-width: 200px;
     box-shadow: var(--shadow);
-    z-index: 1000;
+    z-index: 1500;
 }
 
 .navigation.open ul {
@@ -119,6 +119,20 @@ header h1 {
     background-color: var(--white);
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger animation to X */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 main {
