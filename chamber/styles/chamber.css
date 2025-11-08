@@ -7,6 +7,7 @@
     --white: #ffffff;
     --border-color: #ddd;
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --header-height: 80px;
 }
 
 * {
@@ -109,13 +110,14 @@ header h1 {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.75rem;
+    padding: 1rem;
     z-index: 2500;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: visible;
 }
 
 .hamburger span {
@@ -123,18 +125,21 @@ header h1 {
     height: 3px;
     background-color: var(--white);
     margin: 3px 0;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
     border-radius: 2px;
     display: block;
-    transform-origin: center;
-    -webkit-transform-origin: center;
+    position: relative;
 }
 
-/* Hamburger animation to X - Higher specificity for mobile */
+/* Hamburger animation to X - Simplified approach */
 .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px) !important;
-    transform-origin: center !important;
+    transform: rotate(45deg) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-left: -12.5px !important;
+    margin-top: -1.5px !important;
 }
 
 .hamburger.open span:nth-child(2) {
@@ -142,8 +147,12 @@ header h1 {
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px) !important;
-    transform-origin: center !important;
+    transform: rotate(-45deg) !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    margin-left: -12.5px !important;
+    margin-top: -1.5px !important;
 }
 
 main {
@@ -337,6 +346,8 @@ footer>* {
         overflow: visible;
         position: relative;
         z-index: 2000;
+        height: var(--header-height);
+        padding-right: 1rem;
     }
 
     .logo {
@@ -358,12 +369,16 @@ footer>* {
         border: none;
         cursor: pointer;
         padding: 0.75rem;
-        position: relative;
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 3000;
         width: 50px;
         height: 50px;
         justify-content: center;
         align-items: center;
+        overflow: visible;
     }
 
     .hamburger span {
@@ -371,17 +386,15 @@ footer>* {
         height: 3px;
         background-color: var(--white);
         margin: 4px 0;
-        transition: 0.3s;
-        -webkit-transition: 0.3s;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
         display: block;
-        transform-origin: center;
-        -webkit-transform-origin: center;
+        position: relative;
     }
 
     .navigation {
         position: fixed;
-        top: 70px;
-        /* directly below header */
+        top: var(--header-height, 80px);
         left: 0;
         width: 100%;
         background-color: var(--white);
@@ -426,10 +439,13 @@ footer>* {
     }
 
     .hamburger.open span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px) !important;
-        -webkit-transform: rotate(45deg) translate(6px, 6px) !important;
-        transform-origin: center !important;
-        -webkit-transform-origin: center !important;
+        transform: rotate(45deg) !important;
+        -webkit-transform: rotate(45deg) !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        margin-left: -12.5px !important;
+        margin-top: -1.5px !important;
     }
 
     .hamburger.open span:nth-child(2) {
@@ -437,10 +453,13 @@ footer>* {
     }
 
     .hamburger.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px) !important;
-        -webkit-transform: rotate(-45deg) translate(6px, -6px) !important;
-        transform-origin: center !important;
-        -webkit-transform-origin: center !important;
+        transform: rotate(-45deg) !important;
+        -webkit-transform: rotate(-45deg) !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        margin-left: -12.5px !important;
+        margin-top: -1.5px !important;
     }
 
     /* Footer fix */
@@ -457,8 +476,17 @@ footer>* {
 
 /* ---------- SMALL SCREENS ---------- */
 @media (max-width: 400px) {
+    :root {
+        --header-height: 70px;
+    }
+    
+    header {
+        padding-right: 3.5rem !important;
+    }
+    
     header h1 {
         font-size: 0.9rem;
+        margin-right: 0.5rem !important;
     }
 
     .directory-header h2 {
@@ -466,8 +494,162 @@ footer>* {
     }
 }
 
+/* ---------- TABLET ---------- */
+@media (min-width: 481px) and (max-width: 767px) {
+    :root {
+        --header-height: 100px;
+    }
+}
+
+/* ---------- SURFACE DUO AND FOLDABLES ---------- */
+@media (min-width: 540px) and (max-width: 720px) {
+    :root {
+        --header-height: 90px;
+    }
+    
+    header {
+        height: var(--header-height) !important;
+        padding: 1rem 2rem !important;
+        align-items: center !important;
+    }
+    
+    .logo {
+        width: 70px !important;
+        height: 70px !important;
+        padding: 3px !important;
+    }
+    
+    .hamburger {
+        right: 2rem !important;
+        padding: 0.75rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+    
+    .navigation {
+        position: fixed !important;
+        top: var(--header-height) !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: var(--white) !important;
+        box-shadow: var(--shadow) !important;
+        z-index: 2500 !important;
+        display: none !important;
+    }
+    
+    .navigation.open {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .navigation ul {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .navigation li {
+        border-bottom: 1px solid #ddd !important;
+    }
+    
+    .navigation a {
+        color: var(--primary-color) !important;
+        padding: 1rem !important;
+        text-align: left !important;
+    }
+}
+
+/* ---------- Z FOLD 5 AND TALL FOLDABLES ---------- */
+@media (min-width: 344px) and (max-width: 400px) and (min-height: 800px) {
+    :root {
+        --header-height: 75px;
+    }
+    
+    header {
+        padding: 0.75rem 4rem 0.75rem 1rem !important;
+        height: var(--header-height) !important;
+    }
+    
+    .logo {
+        width: 50px !important;
+        height: 50px !important;
+        padding: 2px !important;
+    }
+    
+    header h1 {
+        font-size: 0.8rem !important;
+        margin-left: 0.25rem !important;
+        margin-right: 0.5rem !important;
+    }
+    
+    .hamburger {
+        right: 0.75rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        padding: 0.25rem !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .hamburger span {
+        width: 20px !important;
+        height: 2px !important;
+        margin: 3px 0 !important;
+    }
+    
+    .hamburger.open span:nth-child(1) {
+        margin-left: -10px !important;
+        margin-top: -1px !important;
+    }
+    
+    .hamburger.open span:nth-child(3) {
+        margin-left: -10px !important;
+        margin-top: -1px !important;
+    }
+}
+
+/* ---------- SURFACE DUO LANDSCAPE ---------- */
+@media (min-width: 720px) and (max-width: 1114px) and (max-height: 540px) {
+    :root {
+        --header-height: 80px;
+    }
+    
+    /* Force mobile navigation for Surface Duo landscape */
+    .hamburger {
+        display: flex !important;
+        right: 2rem !important;
+    }
+    
+    .navigation ul {
+        display: none !important;
+        position: absolute !important;
+        top: calc(100% + 1px) !important;
+        right: 0 !important;
+        flex-direction: column !important;
+        background-color: var(--secondary-color) !important;
+        min-width: 200px !important;
+        box-shadow: var(--shadow) !important;
+        z-index: 1500 !important;
+    }
+    
+    .navigation.open ul {
+        display: flex !important;
+    }
+    
+    .navigation a {
+        color: var(--white) !important;
+        padding: 1rem !important;
+    }
+}
+
 /* ---------- DESKTOP ---------- */
 @media (min-width: 768px) {
+    :root {
+        --header-height: 120px;
+    }
+    
     .hamburger {
         display: none;
     }
