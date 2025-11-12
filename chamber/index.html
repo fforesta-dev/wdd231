@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Terni Chamber of Commerce</title>
+    <meta name="description"
+        content="Welcome to Terni Chamber of Commerce. Supporting local businesses with networking opportunities, resources, and community events in Terni, Italy.">
+    <meta name="author" content="Francesco Foresta">
+    <meta property="og:title" content="Home | Terni Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Welcome to Terni Chamber of Commerce. Supporting local businesses with networking opportunities, resources, and community events in Terni, Italy.">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.webp" alt="Terni Chamber of Commerce Logo" width="100" height="100" class="logo">
+        <h1>Terni Chamber of Commerce</h1>
+
+        <nav id="navigation" class="navigation">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/hero.webp" alt="Terni Chamber of Commerce - Supporting Local Business" width="1200"
+                height="600" class="hero-image">
+            <div class="hero-content">
+                <h2>Welcome to Terni Chamber of Commerce</h2>
+                <p>Empowering local businesses, fostering community growth</p>
+                <a href="join.html" class="cta-button">Join Our Chamber</a>
+            </div>
+        </section>
+
+        <div class="home-grid">
+            <section class="current-events">
+                <h3>Current Events</h3>
+                <article class="event">
+                    <h4>Training Cycle “Morning Talk: Financing SME Exports”</h4>
+                    <p class="event-date">June 20-December 12, 2025</p>
+                    <p>Focus on subsidized loans for companies seeking to expand into international markets.</p>
+                </article>
+                <article class="event">
+                    <h4>Women in Digital: Discover Smart Boost, The Intensive Course to Boost Your Digital Skills</h4>
+                    <p class="event-date">September 10-November 19, 2025</p>
+                    <p>Intensive vertical training dedicated to women.</p>
+                </article>
+                <article class="event">
+                    <h4>Ecommerce Lab - Ecommerce Training Course for Small and Medium-Sized Enterprises</h4>
+                    <p class="event-date">October 10-November 25, 2025</p>
+                    <p>Strategies, tools, and skills for selling online. Five meetings starting October 28.</p>
+                </article>
+            </section>
+
+            <section class="weather">
+                <h3>Terni Weather</h3>
+                <div class="current-weather">
+                    <div class="weather-main">
+                        <span id="current-temp">Loading...</span>
+                        <img id="weather-icon" src="" alt="">
+                    </div>
+                    <p id="weather-desc">Loading weather data...</p>
+                </div>
+                <div class="forecast">
+                    <h4>3-Day Forecast</h4>
+                    <div id="forecast-container">
+                        <div class="forecast-day">
+                            <span class="day">Today</span>
+                            <span class="temp" id="temp-day1">--°</span>
+                        </div>
+                        <div class="forecast-day">
+                            <span class="day">Tomorrow</span>
+                            <span class="temp" id="temp-day2">--°</span>
+                        </div>
+                        <div class="forecast-day">
+                            <span class="day">Day 3</span>
+                            <span class="temp" id="temp-day3">--°</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-spotlights">
+                <h3>Member Spotlights</h3>
+                <div id="spotlights-container">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-address">
+            <h3>Terni Chamber of Commerce</h3>
+            <p>Largo Don Minzoni 6<br>
+                05100 Terni, Italy<br>
+                urp.pg@umbria.camcom.it<br>
+                +39 0744 4891</p>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/cameracommercioumbria" aria-label="Facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook Page of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+            <a href="https://twitter.com/cciaaumbria" aria-label="X">
+                <img src="images/x-icon.svg" alt="X Profile of Terni Chamber of Commerce" width="32" height="32">
+            </a>
+            <a href="https://www.youtube.com/user/urpcciaapg" aria-label="YouTube">
+                <img src="images/youtube-icon.svg" alt="YouTube Channel of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+        </div>
+
+        <div class="footer-attribution">
+            <p>WDD231 Class Project</p>
+            <p>Francesco Foresta</p>
+            <p>&copy; <span id="currentyear"></span> Terni Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+
+</html>
