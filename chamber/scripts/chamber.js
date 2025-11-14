@@ -164,6 +164,7 @@ function displayCurrentWeather(data) {
         const iconCode = data.weather[0].icon;
         iconElement.src = `https://openweathermap.org/img/w/${iconCode}.png`;
         iconElement.alt = data.weather[0].description;
+        iconElement.style.display = 'block';
 
         descElement.textContent = data.weather[0].description;
     }
