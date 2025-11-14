@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2c5530;
-    --secondary-color: #1e3a21;
-    --accent-color: #6b9c6b;
+    --secondary-color: #4a7c59;
+    --accent-color: #8fbc8f;
     --accent-light: #b8d4b8;
     --text-color: #333;
     --light-gray: #f5f5f5;
@@ -54,7 +54,6 @@ h3 {
 a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
 }
 
 a:focus {
@@ -79,19 +78,6 @@ header {
     min-height: 70px;
     flex-wrap: nowrap;
     width: 100%;
-}
-
-header h1 {
-    font-size: 1rem;
-    color: var(--white);
-    font-weight: bold;
-    margin: 0 0.5rem;
-    flex: 1;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
 }
 
 main {
@@ -119,6 +105,19 @@ footer {
     border-radius: 6px;
     padding: 2px;
     flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: bold;
+    margin: 0 0.5rem;
+    flex: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
 }
 
 .navigation {
@@ -287,8 +286,8 @@ footer {
 
 .cta-button {
     display: inline-block;
-    background-color: #0d1f0e;
-    color: var(--white);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 8px;
@@ -303,8 +302,7 @@ footer {
 }
 
 .cta-button:hover {
-    background-color: var(--button-active-bg);
-    color: var(--white);
+    background-color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -345,14 +343,13 @@ footer {
 }
 
 .event h4 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    font-weight: 600;
 }
 
 .event-date {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: bold;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
@@ -669,29 +666,6 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.business-card p {
-    margin: 0.5rem 0;
-    color: var(--text-color);
-}
-
-.business-card a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-.business-card a:hover {
-    color: var(--button-active-bg);
-    text-decoration: underline;
-}
-
-.business-card a:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 1px;
-    background-color: var(--light-gray);
-    color: var(--primary-color);
-}
-
 .membership-level {
     display: inline-block;
     padding: 0.25rem 0.5rem;
@@ -714,6 +688,29 @@ footer {
 .level-3 {
     background-color: var(--bronze);
     color: var(--white);
+}
+
+.business-card p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.business-card a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.business-card a:hover {
+    color: var(--button-active-bg);
+    text-decoration: underline;
+}
+
+.business-card a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 1px;
+    background-color: var(--light-gray);
+    color: var(--primary-color);
 }
 
 .list-view {
@@ -779,41 +776,6 @@ footer {
     font-size: 0.9rem;
 }
 
-@media (max-width: 599px) {
-    .home-grid {
-        padding: 0 0.5rem;
-        gap: 0.75rem;
-        margin-top: 0;
-    }
-
-    main {
-        margin-top: 70px;
-        padding-top: 0;
-    }
-
-    .directory-header {
-        margin: 0.5rem 0 1.5rem 0;
-        padding-top: 0.5rem;
-    }
-
-    .directory-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .event h4 {
-        font-size: 0.9rem;
-        line-height: 1.3;
-    }
-
-    #forecast-container {
-        gap: 0.25rem;
-    }
-
-    .forecast-day {
-        padding: 0.25rem;
-    }
-}
-
 @media (min-width: 600px) {
     .logo {
         width: 60px;
@@ -852,60 +814,6 @@ footer {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-
-    .weather,
-    .weather-forecast {
-        padding: 1rem 0.8rem;
-        font-size: 0.85rem;
-    }
-
-    .weather-details {
-        font-size: 0.8rem;
-    }
-
-    .weather-detail {
-        flex-wrap: wrap;
-        min-width: 0;
-    }
-
-    .weather-detail .label {
-        flex: 1;
-        min-width: 60px;
-        margin-right: 0.25rem;
-        font-size: 0.8rem;
-    }
-
-    .weather-detail span:last-child {
-        flex-shrink: 0;
-        font-size: 0.8rem;
-    }
-
-    .weather-tips p {
-        font-size: 0.75rem;
-        grid-template-columns: 18px minmax(60px, 1fr) 1fr;
-        gap: 0.4rem;
-    }
-
-    .weather-tips strong {
-        font-size: 0.72rem;
-    }
-
-    .weather-tips span {
-        font-size: 0.72rem;
-        word-break: break-word;
-    }
-
-    #current-temp {
-        font-size: 1.8rem;
-    }
-
-    #weather-desc {
-        font-size: 0.8rem;
-        line-height: 1.1;
-    }
-}
-
 @media (min-width: 768px) {
     header {
         padding: 1rem;
@@ -931,8 +839,6 @@ footer {
     .navigation {
         display: block;
         position: static;
-        top: auto;
-        right: auto;
         background: transparent;
         border: none;
         box-shadow: none;
@@ -1106,5 +1012,40 @@ footer {
     .list-view .membership-level {
         flex: 0 0 auto;
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 599px) {
+    .home-grid {
+        padding: 0 0.5rem;
+        gap: 0.75rem;
+        margin-top: 0;
+    }
+
+    main {
+        margin-top: 70px;
+        padding-top: 0;
+    }
+
+    .directory-header {
+        margin: 0.5rem 0 1.5rem 0;
+        padding-top: 0.5rem;
+    }
+
+    .directory-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .event h4 {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    #forecast-container {
+        gap: 0.25rem;
+    }
+
+    .forecast-day {
+        padding: 0.25rem;
     }
 }
