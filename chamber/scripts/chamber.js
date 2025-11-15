@@ -91,7 +91,7 @@ function displayMembers(members, viewType) {
 
     members.forEach(member => {
         const memberCard = document.createElement('div');
-        memberCard.classList.add('business-card', viewType);
+        memberCard.classList.add('business-card', 'card', viewType);
 
         const membershipLevels = {
             1: 'Member',
@@ -278,7 +278,7 @@ function getRandomMembers(members, count) {
 
 function createSpotlightCard(member) {
     const card = document.createElement('div');
-    card.className = 'spotlight-card';
+    card.className = 'spotlight-card card';
 
     const membershipLevels = {
         1: 'Member',
