@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Join Us | Terni Chamber of Commerce</title>
+    <meta name="description"
+        content="Join the Terni Chamber of Commerce. Apply for membership to support local businesses and foster community growth.">
+    <meta name="author" content="Francesco Foresta">
+    <meta property="og:title" content="Join Us | Terni Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Join the Terni Chamber of Commerce. Apply for membership to support local businesses and foster community growth.">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/join.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.webp" alt="Terni Chamber of Commerce Logo" width="100" height="100" class="logo">
+        <h1>Terni Chamber of Commerce</h1>
+
+        <nav id="navigation" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li class="current"><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="join-hero">
+            <h2>Join Our Chamber</h2>
+            <p>Become a member of the Terni Chamber of Commerce and connect with local businesses, access exclusive
+                resources, and help foster community growth.</p>
+        </section>
+
+        <div class="join-container">
+            <section class="join-form-section">
+                <h3>Membership Application</h3>
+                <form id="membership-form" method="get" action="thankyou.html">
+                    <label for="first-name">
+                        First name *
+                        <input type="text" id="first-name" name="first-name" title="Enter your first name"
+                            autocomplete="given-name" required autofocus>
+                    </label>
+
+                    <label for="last-name">
+                        Last name *
+                        <input type="text" id="last-name" name="last-name" title="Enter your last name"
+                            autocomplete="family-name" required>
+                    </label>
+
+                    <label for="title">
+                        Title
+                        <input type="text" id="title" name="title"
+                            title="Enter your title within your organization (minimum 7 characters, letters, hyphens, and spaces only)"
+                            autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                    </label>
+
+                    <label for="email">
+                        Email *
+                        <input type="email" id="email" name="email" title="Enter your email address"
+                            autocomplete="email" placeholder="john@example.com" required>
+                    </label>
+
+                    <label for="phone">
+                        Cell phone number *
+                        <input type="text" id="phone" name="phone"
+                            title="Enter your phone number (international format accepted)" autocomplete="tel"
+                            placeholder="+39 123 456 7890" required>
+                    </label>
+
+                    <label for="business-name">
+                        Organization *
+                        <input type="text" id="business-name" name="business-name"
+                            title="Enter your business or organization name" autocomplete="organization" required>
+                    </label>
+
+                    <fieldset class="membership-fieldset">
+                        <legend>Membership level</legend>
+                        <label class="radio-label">
+                            <input type="radio" name="membership-level" value="np" required>
+                            <span class="radio-custom"></span>
+                            Non Profit Membership Level
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="membership-level" value="bronze" required>
+                            <span class="radio-custom"></span>
+                            Bronze Membership Level
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="membership-level" value="silver" required>
+                            <span class="radio-custom"></span>
+                            Silver Membership Level
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="membership-level" value="gold" required>
+                            <span class="radio-custom"></span>
+                            Gold Membership Level
+                        </label>
+                    </fieldset>
+
+                    <label for="description">
+                        Organization description
+                        <textarea id="description" name="description" title="Describe your business or organization"
+                            rows="4" placeholder="Tell us about your business or organization..."></textarea>
+                    </label>
+
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <button type="submit" class="submit-btn">Apply for Membership</button>
+                </form>
+            </section>
+
+            <section class="membership-levels">
+                <h3>Membership levels</h3>
+                <div class="membership-cards">
+                    <div class="membership-card np-card">
+                        <h4>Non Profit Membership Level</h4>
+                        <button class="learn-more-btn" data-modal="np-modal">Learn More</button>
+                    </div>
+
+                    <div class="membership-card bronze-card">
+                        <h4>Bronze Membership Level</h4>
+                        <button class="learn-more-btn" data-modal="bronze-modal">Learn More</button>
+                    </div>
+
+                    <div class="membership-card silver-card">
+                        <h4>Silver Membership Level</h4>
+                        <button class="learn-more-btn" data-modal="silver-modal">Learn More</button>
+                    </div>
+
+                    <div class="membership-card gold-card">
+                        <h4>Gold Membership Level</h4>
+                        <button class="learn-more-btn" data-modal="gold-modal">Learn More</button>
+                    </div>
+                </div>
+        </div>
+        </section>
+        </div>
+    </main>
+
+    <div id="np-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="np-modal">&times;</span>
+            <h3>Non Profit Membership Benefits</h3>
+            <ul>
+                <li>✓ Free membership for qualifying non-profit organizations</li>
+                <li>✓ Basic directory listing</li>
+                <li>✓ Access to chamber newsletter</li>
+                <li>✓ Networking event notifications</li>
+                <li>✓ Chamber resource access</li>
+                <li>✓ Community event participation</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="bronze-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="bronze-modal">&times;</span>
+            <h3>Bronze Membership Benefits</h3>
+            <ul>
+                <li>✓ All Non Profit membership benefits</li>
+                <li>✓ Enhanced directory listing</li>
+                <li>✓ Monthly newsletter inclusion</li>
+                <li>✓ Training workshop access</li>
+                <li>✓ Basic event discounts</li>
+                <li>✓ Networking event invitations</li>
+                <li>✓ Chamber resource library access</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="silver-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="silver-modal">&times;</span>
+            <h3>Silver Membership Benefits</h3>
+            <ul>
+                <li>✓ All Bronze membership benefits</li>
+                <li>✓ Enhanced directory listing with logo</li>
+                <li>✓ Quarterly spotlight on home page</li>
+                <li>✓ Access to exclusive networking events</li>
+                <li>✓ Training workshop discounts</li>
+                <li>✓ Social media promotion opportunities</li>
+                <li>✓ Chamber publication advertising</li>
+                <li>✓ Business referral program</li>
+                <li>✓ Event sponsorship opportunities</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="gold-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="gold-modal">&times;</span>
+            <h3>Gold Membership Benefits</h3>
+            <ul>
+                <li>✓ All Silver membership benefits</li>
+                <li>✓ Premium home page spotlight rotation</li>
+                <li>✓ VIP access to all chamber events</li>
+                <li>✓ Personal business consultation sessions</li>
+                <li>✓ Priority speaking opportunities at events</li>
+                <li>✓ Maximum event discounts and luncheon access</li>
+                <li>✓ Premium newsletter advertising space</li>
+                <li>✓ Dedicated social media campaigns</li>
+                <li>✓ Ribbon cutting ceremony support</li>
+                <li>✓ Chamber board meeting participation</li>
+                <li>✓ Annual award consideration priority</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-address">
+            <h3>Terni Chamber of Commerce</h3>
+            <p>Largo Don Minzoni 6<br>
+                05100 Terni, Italy<br>
+                urp.pg@umbria.camcom.it<br>
+                +39 0744 4891</p>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/cameracommercioumbria" aria-label="Facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook Page of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+            <a href="https://twitter.com/cciaaumbria" aria-label="X">
+                <img src="images/x-icon.svg" alt="X Profile of Terni Chamber of Commerce" width="32" height="32">
+            </a>
+            <a href="https://www.youtube.com/user/urpcciaapg" aria-label="YouTube">
+                <img src="images/youtube-icon.svg" alt="YouTube Channel of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+        </div>
+
+        <div class="footer-attribution">
+            <p>WDD231 Class Project</p>
+            <p>Francesco Foresta</p>
+            <p>&copy; <span id="currentyear"></span> Terni Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+
+</html>

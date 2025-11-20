@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank You - Terni Chamber of Commerce</title>
+    <meta name="description" content="Thank you for your membership application to the Terni Chamber of Commerce.">
+    <meta name="author" content="Francesco Foresta">
+    <meta property="og:title" content="Thank You | Terni Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Thank you for your membership application to the Terni Chamber of Commerce.">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/thankyou.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.webp" alt="Terni Chamber of Commerce Logo" class="logo">
+        <h1>Terni Chamber of Commerce</h1>
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="navigation" class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="thank-you-hero">
+            <h2>Thank You!</h2>
+            <p>Your membership application has been successfully submitted. We appreciate your interest in joining the
+                Terni Chamber of Commerce.</p>
+        </section>
+
+        <div class="thank-you-container">
+            <section class="application-summary">
+                <h3>Application Summary</h3>
+                <div class="form-data" id="form-data">
+                </div>
+                <div class="next-steps">
+                    <h4>What's Next?</h4>
+                    <ul>
+                        <li>We will review your application within 2-3 business days</li>
+                        <li>You will receive a confirmation email with next steps</li>
+                        <li>Our membership team may contact you for additional information</li>
+                        <li>Welcome packet will be sent upon approval</li>
+                    </ul>
+                </div>
+                <a href="index.html" class="back-home-btn">Return to Home</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-address">
+            <h3>Terni Chamber of Commerce</h3>
+            <p>Largo Don Minzoni 6<br>
+                05100 Terni, Italy<br>
+                urp.pg@umbria.camcom.it<br>
+                +39 0744 4891</p>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/cameracommercioumbria" aria-label="Facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook Page of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+            <a href="https://twitter.com/cciaaumbria" aria-label="X">
+                <img src="images/x-icon.svg" alt="X Profile of Terni Chamber of Commerce" width="32" height="32">
+            </a>
+            <a href="https://www.youtube.com/user/urpcciaapg" aria-label="YouTube">
+                <img src="images/youtube-icon.svg" alt="YouTube Channel of Terni Chamber of Commerce" width="32"
+                    height="32">
+            </a>
+        </div>
+
+        <div class="footer-attribution">
+            <p>WDD231 Class Project</p>
+            <p>Francesco Foresta</p>
+            <p>&copy; <span id="currentyear"></span> Terni Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

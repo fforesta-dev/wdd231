@@ -26,13 +26,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100%;
 }
 
-html,
-body {
+html {
     height: 100%;
-    overflow-x: hidden;
 }
 
 body {
@@ -41,6 +38,7 @@ body {
     color: var(--text-color);
     background-color: var(--light-gray);
     min-width: 320px;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -97,9 +95,7 @@ header h1 {
 main {
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
     margin-top: 70px;
-    padding-top: 0rem;
 }
 
 footer {
@@ -632,7 +628,7 @@ footer {
 
 #directory-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
     padding: 0 1rem;
 }
 
@@ -1107,5 +1103,583 @@ footer {
     .list-view .membership-level {
         flex: 0 0 auto;
         margin-bottom: 0;
+    }
+}
+
+/* Join Page Styles */
+.join-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.join-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.join-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.join-form-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.join-form-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+#membership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#membership-form label {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+
+#membership-form input,
+#membership-form textarea {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#membership-form input:focus,
+#membership-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(107, 156, 107, 0.1);
+}
+
+#membership-form input:invalid {
+    border-color: #e74c3c;
+}
+
+#membership-form input:valid {
+    border-color: var(--accent-color);
+}
+
+.membership-fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.membership-fieldset legend {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+.radio-label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    margin: 0.75rem 0;
+    cursor: pointer;
+    text-transform: none !important;
+}
+
+.radio-label input[type="radio"] {
+    margin: 0 1rem 0 0 !important;
+    transform: scale(1.3);
+    accent-color: var(--accent-color);
+}
+
+.radio-custom {
+    display: none;
+}
+
+.membership-levels {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.membership-levels h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.membership-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.membership-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.membership-option:hover {
+    border-color: var(--accent-color);
+    background-color: var(--light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.membership-option input[type="radio"] {
+    margin-right: 1rem;
+    margin-top: 0;
+    transform: scale(1.3);
+}
+
+.membership-option input[type="radio"]:checked+.option-content {
+    color: var(--primary-color);
+}
+
+.membership-option input[type="radio"]:checked {
+    accent-color: var(--accent-color);
+}
+
+.option-content {
+    flex: 1;
+}
+
+.option-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.option-content p {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.option-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-right: 1rem;
+}
+
+.membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.membership-card {
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.membership-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
+}
+
+.membership-card:hover::before {
+    transform: translateX(0);
+}
+
+.membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.np-card {
+    border-left: 4px solid #28a745;
+}
+
+.np-card::before {
+    background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.np-card:hover {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-color: #28a745;
+}
+
+.bronze-card {
+    border-left: 4px solid #cd7f32;
+}
+
+.bronze-card::before {
+    background: linear-gradient(90deg, #cd7f32, #daa520);
+}
+
+.bronze-card:hover {
+    background: linear-gradient(135deg, #f8f1e8 0%, #f5e6d3 100%);
+    border-color: #cd7f32;
+}
+
+.silver-card {
+    border-left: 4px solid #c0c0c0;
+}
+
+.silver-card::before {
+    background: linear-gradient(90deg, #c0c0c0, #e5e5e5);
+}
+
+.silver-card:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-color: #c0c0c0;
+}
+
+.gold-card {
+    border-left: 4px solid #ffd700;
+}
+
+.gold-card::before {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.gold-card:hover {
+    background: linear-gradient(135deg, #fff8dc 0%, #ffeaa7 100%);
+    border-color: #ffd700;
+}
+
+.membership-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.learn-more-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.learn-more-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.learn-more-btn:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.modal-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.modal-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* Thank You Page Styles */
+.thank-you-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.thank-you-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.thank-you-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.thank-you-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.application-summary {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.application-summary h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.form-data-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-data-item:last-child {
+    border-bottom: none;
+}
+
+.form-data-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    flex: 1;
+}
+
+.form-data-value {
+    color: var(--text-color);
+    flex: 2;
+    text-align: right;
+}
+
+.next-steps {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.next-steps h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.next-steps ul {
+    padding-left: 1.5rem;
+}
+
+.next-steps li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.back-home-btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-home-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: var(--white);
+}
+
+/* Responsive Styles for Join and Thank You Pages */
+@media (min-width: 768px) {
+    .join-container {
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+
+    .membership-options {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .membership-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .thank-you-hero h2 {
+        font-size: 3rem;
+    }
+
+    .thank-you-hero p {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+
+    .join-hero h2,
+    .thank-you-hero h2 {
+        font-size: 2rem;
+    }
+
+    .join-hero p,
+    .thank-you-hero p {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
     }
 }

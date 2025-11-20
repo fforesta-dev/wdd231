@@ -1,3 +1,9 @@
+const WEATHER_API_KEY = '92dabf2f8d9c3851bbe133d2b8bcd172';
+const TERNI_LAT = 42.57;
+const TERNI_LON = 12.67;
+const CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${TERNI_LAT}&lon=${TERNI_LON}&units=metric&appid=${WEATHER_API_KEY}`;
+const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${TERNI_LAT}&lon=${TERNI_LON}&units=metric&appid=${WEATHER_API_KEY}`;
+
 const gridViewBtn = document.getElementById('grid-view');
 const listViewBtn = document.getElementById('list-view');
 const directoryContainer = document.getElementById('directory-container');
@@ -9,7 +15,6 @@ let membersData = [];
 function initializeNavigation() {
     if (menuToggle && navigation) {
         menuToggle.removeEventListener('click', toggleMenu);
-
         menuToggle.addEventListener('click', toggleMenu);
 
         document.addEventListener('click', function (event) {
@@ -31,37 +36,29 @@ function initializeNavigation() {
 function toggleMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-
     console.log('Hamburger clicked');
-
     navigation.classList.toggle('show');
     menuToggle.classList.toggle('active');
-
     console.log('Navigation classes:', navigation.classList.toString());
     console.log('Menu toggle classes:', menuToggle.classList.toString());
 }
 
-const WEATHER_API_KEY = '92dabf2f8d9c3851bbe133d2b8bcd172';
-const TERNI_LAT = 42.57;
-const TERNI_LON = 12.67;
+function initializeDirectoryView() {
+    if (gridViewBtn && listViewBtn && directoryContainer) {
+        gridViewBtn.addEventListener('click', () => {
+            directoryContainer.className = 'grid-view';
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            displayMembers(membersData, 'grid');
+        });
 
-const CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${TERNI_LAT}&lon=${TERNI_LON}&units=metric&appid=${WEATHER_API_KEY}`;
-const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${TERNI_LAT}&lon=${TERNI_LON}&units=metric&appid=${WEATHER_API_KEY}`;
-
-if (gridViewBtn && listViewBtn && directoryContainer) {
-    gridViewBtn.addEventListener('click', () => {
-        directoryContainer.className = 'grid-view';
-        gridViewBtn.classList.add('active');
-        listViewBtn.classList.remove('active');
-        displayMembers(membersData, 'grid');
-    });
-
-    listViewBtn.addEventListener('click', () => {
-        directoryContainer.className = 'list-view';
-        listViewBtn.classList.add('active');
-        gridViewBtn.classList.remove('active');
-        displayMembers(membersData, 'list');
-    });
+        listViewBtn.addEventListener('click', () => {
+            directoryContainer.className = 'list-view';
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            displayMembers(membersData, 'list');
+        });
+    }
 }
 
 async function getMembers() {
@@ -89,15 +86,21 @@ function displayMembers(members, viewType) {
 
     directoryContainer.innerHTML = '';
 
+    const membershipLevels = {
+        1: 'Bronze',
+        2: 'Silver',
+        3: 'Gold'
+    };
+
+    const membershipClasses = {
+        1: 'level-1',
+        2: 'level-2',
+        3: 'level-3'
+    };
+
     members.forEach(member => {
         const memberCard = document.createElement('div');
         memberCard.classList.add('business-card', 'card', viewType);
-
-        const membershipLevels = {
-            1: 'Member',
-            2: 'Silver',
-            3: 'Gold'
-        };
 
         if (viewType === 'grid') {
             memberCard.innerHTML = `
@@ -107,7 +110,7 @@ function displayMembers(members, viewType) {
                 <p><strong>Address:</strong> ${member.address}</p>
                 <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
                 <p><strong>Website:</strong> <a href="${member.website}" target="_blank">Visit Site</a></p>
-                <span class="membership-level level-${member.membershipLevel}">
+                <span class="membership-level ${membershipClasses[member.membershipLevel]}">
                     ${membershipLevels[member.membershipLevel]}
                 </span>
             `;
@@ -118,7 +121,7 @@ function displayMembers(members, viewType) {
                     <p><strong>Address:</strong> ${member.address}</p>
                     <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
                     <p><strong>Website:</strong> <a href="${member.website}" target="_blank">Visit Site</a></p>
-                    <span class="membership-level level-${member.membershipLevel}">
+                    <span class="membership-level ${membershipClasses[member.membershipLevel]}">
                         ${membershipLevels[member.membershipLevel]}
                     </span>
                 </div>
@@ -237,6 +240,31 @@ function displayWeatherError() {
     if (descElement) descElement.textContent = 'Weather data unavailable';
 }
 
+function updateWeatherTips(currentTemp, humidity, locationName) {
+    const bestTimeElement = document.getElementById('best-time');
+    const tempTrendElement = document.getElementById('temp-trend');
+    const locationElement = document.getElementById('weather-location');
+
+    if (!bestTimeElement || !tempTrendElement || !locationElement) return;
+    let bestTime = 'Morning (8-10 AM)';
+    if (currentTemp > 25) {
+        bestTime = 'Early morning or evening';
+    } else if (currentTemp < 10) {
+        bestTime = 'Midday (12-2 PM)';
+    }
+
+    let tempTrend = 'Mild and comfortable';
+    if (currentTemp > 25) {
+        tempTrend = 'Warm weather ahead';
+    } else if (currentTemp < 10) {
+        tempTrend = 'Cool conditions';
+    }
+
+    bestTimeElement.textContent = bestTime;
+    tempTrendElement.textContent = tempTrend;
+    locationElement.textContent = locationName;
+}
+
 async function loadMemberSpotlights() {
     try {
         const response = await fetch('data/members.json');
@@ -281,15 +309,23 @@ function createSpotlightCard(member) {
     card.className = 'spotlight-card card';
 
     const membershipLevels = {
-        1: 'Member',
+        0: 'NP',
+        1: 'Bronze',
         2: 'Silver',
         3: 'Gold'
+    };
+
+    const membershipClasses = {
+        0: 'level-np',
+        1: 'level-1',
+        2: 'level-2',
+        3: 'level-3'
     };
 
     card.innerHTML = `
         <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
         <h4>${member.name}</h4>
-        <div class="membership-level level-${member.membershipLevel}">${membershipLevels[member.membershipLevel]} Member</div>
+        <div class="membership-level ${membershipClasses[member.membershipLevel]}">${membershipLevels[member.membershipLevel]} Member</div>
         <div class="contact-info">
             <p><strong>Phone:</strong> ${member.phone}</p>
             <p><strong>Address:</strong> ${member.address}</p>
@@ -298,6 +334,77 @@ function createSpotlightCard(member) {
     `;
 
     return card;
+}
+
+function initializeJoinPage() {
+    const form = document.getElementById('membership-form');
+    const timestampField = document.getElementById('timestamp');
+    const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close');
+
+    if (timestampField) {
+        const now = new Date();
+        timestampField.value = now.toISOString();
+    }
+
+    learnMoreButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    closeButtons.forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            const modalId = closeBtn.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    });
+
+    if (form) {
+        const titleInput = document.getElementById('title');
+        const phoneInput = document.getElementById('phone');
+
+        if (titleInput) {
+            titleInput.addEventListener('invalid', () => {
+                titleInput.setCustomValidity('Title must be at least 7 characters and contain only letters, spaces, and hyphens.');
+            });
+
+            titleInput.addEventListener('input', () => {
+                titleInput.setCustomValidity('');
+            });
+        }
+    }
 }
 
 function setCurrentYear() {
@@ -321,6 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeNavigation();
 
+    if (document.getElementById('membership-form')) {
+        console.log('Join page detected, initializing join functionality...');
+        initializeJoinPage();
+    }
+
     if (document.querySelector('.hero')) {
         console.log('Home page detected, loading weather and spotlights...');
         loadWeatherData();
@@ -329,34 +441,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (directoryContainer) {
         console.log('Directory page detected, loading members...');
+        initializeDirectoryView();
         getMembers();
     }
 
     setCurrentYear();
     setLastModified();
 });
-
-function updateWeatherTips(currentTemp, humidity, locationName) {
-    const bestTimeElement = document.getElementById('best-time');
-    const tempTrendElement = document.getElementById('temp-trend');
-    const locationElement = document.getElementById('weather-location');
-
-    if (!bestTimeElement || !tempTrendElement || !locationElement) return;
-    let bestTime = 'Morning (8-10 AM)';
-    if (currentTemp > 25) {
-        bestTime = 'Early morning or evening';
-    } else if (currentTemp < 10) {
-        bestTime = 'Midday (12-2 PM)';
-    }
-
-    let tempTrend = 'Mild and comfortable';
-    if (currentTemp > 25) {
-        tempTrend = 'Warm weather ahead';
-    } else if (currentTemp < 10) {
-        tempTrend = 'Cool conditions';
-    }
-
-    bestTimeElement.textContent = bestTime;
-    tempTrendElement.textContent = tempTrend;
-    locationElement.textContent = locationName;
-}
