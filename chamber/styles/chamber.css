@@ -1106,7 +1106,6 @@ footer {
     }
 }
 
-/* Join Page Styles */
 .join-hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -1320,6 +1319,37 @@ footer {
     background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
     border: 2px solid transparent;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.membership-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.membership-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.membership-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.membership-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .membership-card::before {
@@ -1452,7 +1482,6 @@ footer {
     outline-offset: 2px;
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -1535,7 +1564,6 @@ footer {
     margin-bottom: 0;
 }
 
-/* Thank You Page Styles */
 .thank-you-hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -1642,7 +1670,6 @@ footer {
     color: var(--white);
 }
 
-/* Responsive Styles for Join and Thank You Pages */
 @media (min-width: 768px) {
     .join-container {
         grid-template-columns: 2fr 1fr;
