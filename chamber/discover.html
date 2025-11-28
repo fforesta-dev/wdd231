@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Directory | Terni Chamber of Commerce</title>
+    <title>Discover | Terni Chamber of Commerce</title>
     <meta name="description"
-        content="Browse local businesses and organizations in our Terni Chamber of Commerce member directory. Find contact info and services.">
+        content="Discover the beauty and attractions of Terni, Italy. Explore historic sites, natural wonders, and cultural landmarks in our vibrant city.">
     <meta name="author" content="Francesco Foresta">
-    <meta property="og:title" content="Directory | Terni Chamber of Commerce">
+    <meta property="og:title" content="Discover | Terni Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:description"
-        content="Browse local businesses and organizations in our Terni Chamber of Commerce member directory. Find contact info and services.">
+        content="Discover the beauty and attractions of Terni, Italy. Explore historic sites, natural wonders, and cultural landmarks in our vibrant city.">
     <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/chamber/images/hero.webp">
-    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/chamber/discover.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="icon" href="favicon.ico">
-    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/discover.js" type="module"></script>
 </head>
 
 <body>
@@ -33,9 +33,9 @@
         <nav id="navigation" class="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li class="current"><a href="directory.html">Directory</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
+                <li class="current"><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
 
@@ -47,18 +47,18 @@
     </header>
 
     <main>
-        <section class="directory-hero">
-            <h2>Business Directory</h2>
-            <p>Discover local businesses and organizations that are proud members of our chamber</p>
+        <section class="discover-hero">
+            <h2>Discover Terni</h2>
+            <p>Explore the industrial heart of Umbria with its rich history, stunning waterfalls, and cultural
+                treasures.</p>
         </section>
 
-        <section class="directory-controls">
-            <button id="grid-view" class="view-btn active" aria-label="Grid view">Grid</button>
-            <button id="list-view" class="view-btn" aria-label="List view">List</button>
-        </section>
+        <div id="visitor-message" class="visitor-message"></div>
 
-        <section id="directory-container" class="grid-view">
+        <section class="discover-gallery">
+            <div class="gallery-container" id="gallery-container">
 
+            </div>
         </section>
     </main>
 
