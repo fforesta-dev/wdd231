@@ -51,7 +51,7 @@ const createPlanCardElement = (item) => {
     <h3>${item.title}</h3>
     <p>${item.summary}</p>
     <p class="scripture-ref">${item.scriptureRef}</p>
-    <button type="button" class="btn-secondary plan-more-btn" data-id="${item.id}">
+    <button type="button" class="button-secondary plan-more-btn" data-id="${item.id}">
       Scripture Insight
     </button>
   `;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study &amp; Reflection – Our Eternal Journey</title>
     <meta name="description"
         content="Study scriptures, prompts, and questions that help you apply the Plan of Salvation to your daily life.">
@@ -12,14 +12,15 @@
     <meta property="og:description"
         content="Scripture-based prompts to deepen your understanding of God’s plan for you.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/final/study.html">
-    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/final/images/hero-plan.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/project/study.html">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/project/images/hero-plan.webp">
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.mjs" type="module"></script>
 </head>
@@ -28,7 +29,8 @@
     <header class="site-header">
         <div class="logo-title">
             <a href="index.html" class="site-logo" aria-label="Home">
-                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo" class="logo-image"></span>
+                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo"
+                        class="logo-image"></span>
             </a>
             <div>
                 <p class="site-name">Our Eternal Journey</p>
@@ -50,7 +52,7 @@
     </header>
 
     <main>
-        <!-- PAGE HERO -->
+
         <section class="page-hero">
             <div>
                 <h1>Study &amp; Reflection</h1>
@@ -61,9 +63,8 @@
             </div>
         </section>
 
-        <!-- THREE-COLUMN GRID -->
         <section class="study-grid">
-            <article class="study-card card">
+            <article class="study-card section-card">
                 <h2>Scripture Focus</h2>
                 <ul>
                     <li><strong>Premortal Life:</strong> Jeremiah 1:5; Abraham 3:22–23</li>
@@ -78,7 +79,7 @@
                 </p>
             </article>
 
-            <article class="study-card card">
+            <article class="study-card section-card">
                 <h2>Reflection Prompts</h2>
                 <ol>
                     <li>How does knowing you lived with Heavenly Father before this life change the way you see
@@ -93,10 +94,10 @@
                 </p>
             </article>
 
-            <article class="study-card card">
+            <article class="study-card section-card">
                 <h2>Your Saved Reflection</h2>
                 <p id="saved-reflection" class="saved-reflection">
-                    <!-- JS loads from localStorage -->
+
                 </p>
                 <p class="small-note">
                     If you haven’t submitted a reflection yet, go back to the <a href="index.html">Home page</a> and

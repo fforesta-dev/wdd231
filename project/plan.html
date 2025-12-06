@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Plan of Salvation – Step-by-Step Overview</title>
     <meta name="description"
         content="Study a step-by-step overview of the Plan of Salvation with clear explanations and visual groupings of each phase.">
@@ -11,14 +11,15 @@
     <meta property="og:title" content="The Plan of Salvation – Step-by-Step Overview">
     <meta property="og:description" content="Learn how each phase of God’s plan fits together in your eternal journey.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/final/plan.html">
-    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/final/images/hero-plan.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/project/plan.html">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/project/images/hero-plan.webp">
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.mjs" type="module"></script>
 </head>
@@ -27,7 +28,8 @@
     <header class="site-header">
         <div class="logo-title">
             <a href="index.html" class="site-logo" aria-label="Home">
-                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo" class="logo-image"></span>
+                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo"
+                        class="logo-image"></span>
             </a>
             <div>
                 <p class="site-name">Our Eternal Journey</p>
@@ -49,70 +51,69 @@
     </header>
 
     <main>
-        <!-- PAGE HERO -->
+
         <section class="page-hero">
             <div>
                 <h1>The Plan of Salvation – Phase by Phase</h1>
                 <p>
                     This page groups the main principles of the Plan of Salvation by phase. Scan the whole plan or focus
                     on one part of your journey at a time. Use the “Scripture Insight” buttons to open verses and
-                    explanations in a modal.
+                    explanations.
                 </p>
             </div>
         </section>
 
-        <!-- PHASE GRID -->
         <section class="phase-grid">
-            <section class="phase-section card" aria-labelledby="premortal-heading">
+            <section class="phase-section section-card" aria-labelledby="premortal-heading">
                 <h2 id="premortal-heading">Premortal Life</h2>
                 <p>
                     Before we were born, we lived as spirit children of Heavenly Parents. We learned, progressed, and
                     prepared to come to earth.
                 </p>
                 <div id="premortal-list" class="plan-list">
-                    <!-- JS injects premortal cards -->
+
                 </div>
             </section>
 
-            <section class="phase-section card" aria-labelledby="mortal-heading">
+            <section class="phase-section section-card" aria-labelledby="mortal-heading">
                 <h2 id="mortal-heading">Earth Life</h2>
                 <p>
                     In mortality, we receive bodies, make covenants, and learn to walk by faith in Jesus Christ.
                 </p>
                 <div id="mortal-list" class="plan-list">
-                    <!-- JS injects mortal cards -->
+
                 </div>
             </section>
 
-            <section class="phase-section card" aria-labelledby="spirit-heading">
+            <section class="phase-section section-card" aria-labelledby="spirit-heading">
                 <h2 id="spirit-heading">Spirit World</h2>
                 <p>
                     After death, our spirits go to the spirit world, where the gospel is taught and God’s mercy
                     continues.
                 </p>
                 <div id="spirit-world-list" class="plan-list">
-                    <!-- JS injects spirit world cards -->
+
                 </div>
             </section>
 
-            <section class="phase-section card" aria-labelledby="res-heading">
+            <section class="phase-section section-card" aria-labelledby="res-heading">
                 <h2 id="res-heading">Resurrection &amp; Judgment</h2>
                 <p>
                     Through the Resurrection of Jesus Christ, all will rise and be judged with perfect fairness and
                     mercy.
                 </p>
                 <div id="resurrection-list" class="plan-list">
-                    <!-- JS injects resurrection cards -->
+
                 </div>
             </section>
 
-            <section class="phase-section card" aria-labelledby="kingdoms-heading">
+            <section class="phase-section section-card" aria-labelledby="kingdoms-heading">
                 <h2 id="kingdoms-heading">Kingdoms of Glory</h2>
                 <p>
                     In the end, we inherit a degree of glory according to our desires, choices, and covenants.
                 </p>
                 <div id="kingdoms-list" class="plan-list">
-                    <!-- JS injects kingdoms cards -->
+
                 </div>
             </section>
         </section>
@@ -128,14 +129,14 @@
     </footer>
 
     <dialog id="scripture-modal" aria-labelledby="modal-title" aria-describedby="modal-content">
-        <form method="dialog" class="modal-inner">
-            <header class="modal-header">
+        <form method="dialog" class="dialog-inner">
+            <header class="dialog-header">
                 <h2 id="modal-title">Scripture Insight</h2>
                 <button type="submit" aria-label="Close">&times;</button>
             </header>
-            <div id="modal-content" class="modal-content"></div>
-            <footer class="modal-footer">
-                <button type="submit" class="btn-secondary">Close</button>
+            <div id="modal-content" class="dialog-content"></div>
+            <footer class="dialog-footer">
+                <button type="submit" class="button-secondary">Close</button>
             </footer>
         </form>
     </dialog>

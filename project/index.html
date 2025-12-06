@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Plan of Salvation: Our Eternal Journey</title>
     <meta name="description"
         content="Discover the Plan of Salvation with simple explanations, visual summaries, and scriptures that show how God’s eternal plan guides our journey back to Him.">
@@ -11,14 +11,15 @@
     <meta property="og:title" content="The Plan of Salvation: Our Eternal Journey">
     <meta property="og:description" content="An uplifting, Christ-centered overview of God’s plan for His children.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/final/">
-    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/final/images/hero-plan.webp">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/project/">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/project/images/hero-plan.webp">
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.mjs" type="module"></script>
 </head>
@@ -27,7 +28,8 @@
     <header class="site-header">
         <div class="logo-title">
             <a href="index.html" class="site-logo" aria-label="Home">
-                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo" class="logo-image"></span>
+                <span class="logo-circle"><img src="images/logo.webp" alt="Our Eternal Journey Logo"
+                        class="logo-image"></span>
             </a>
             <div>
                 <p class="site-name">Our Eternal Journey</p>
@@ -49,7 +51,7 @@
     </header>
 
     <main>
-        <!-- HERO -->
+
         <section class="hero hero--home">
             <div class="hero-text">
                 <h1>The Plan of Salvation: Our Eternal Journey</h1>
@@ -59,8 +61,8 @@
                     you understand your eternal journey.
                 </p>
                 <div class="hero-actions">
-                    <a href="#plan-grid" class="btn-primary">Explore the Plan</a>
-                    <a href="study.html" class="btn-secondary">Study &amp; Reflect</a>
+                    <a href="plan.html" class="button-primary">Explore the Plan</a>
+                    <a href="study.html" class="button-secondary">Study &amp; Reflect</a>
                 </div>
             </div>
             <figure class="hero-image">
@@ -69,10 +71,9 @@
             </figure>
         </section>
 
-        <!-- QUICK OVERVIEW + VISIT MESSAGE + TIMELINE (SPLIT LAYOUT) -->
         <section class="home-section home-section--split home-section--overview"
             aria-label="Overview and timeline of the plan">
-            <div class="card card--section">
+            <div class="section-card">
                 <h2>Why the Plan of Salvation Matters</h2>
                 <p>
                     The Plan of Salvation answers questions like “Where did I come from?”, “Why am I here?”,
@@ -80,11 +81,11 @@
                     the center of this plan and how His Atonement brings meaning and hope to every part of our journey.
                 </p>
                 <p id="visit-message" class="visit-message">
-                    <!-- JS: first visit / welcome back -->
+
                 </p>
             </div>
 
-            <aside class="card card--section timeline-section" aria-labelledby="timeline-heading">
+            <aside class="section-card timeline-section" aria-labelledby="timeline-heading">
                 <h2 id="timeline-heading">Timeline of Our Eternal Journey</h2>
                 <p class="small-note">
                     Swipe horizontally on a phone or drag with your mouse to see each step.
@@ -116,45 +117,64 @@
             </aside>
         </section>
 
-        <!-- DYNAMIC GRID FROM JSON -->
-        <section class="home-section" aria-labelledby="plan-grid-heading">
+        <section class="home-section home-section--cta" aria-labelledby="plan-cta-heading">
             <header class="section-header">
                 <div>
-                    <h2 id="plan-grid-heading">Overview of the Plan</h2>
-                </div>
-                <div class="filter-controls">
-                    <label for="phase-filter">Filter by phase:</label>
-                    <select id="phase-filter" name="phase-filter">
-                        <option value="all">All</option>
-                        <option value="premortal">Premortal Life</option>
-                        <option value="mortal">Earth Life</option>
-                        <option value="spirit-world">Spirit World</option>
-                        <option value="resurrection">Resurrection &amp; Judgment</option>
-                        <option value="kingdoms">Kingdoms of Glory</option>
-                    </select>
+                    <h2 id="plan-cta-heading">Explore the Plan in More Depth</h2>
+                    <p>
+                        When you’re ready, you can study each phase of the Plan of Salvation one step at a time.
+                        Start where you feel drawn, or walk through the whole plan from beginning to end.
+                    </p>
                 </div>
             </header>
 
-            <div id="plan-grid" class="plan-grid" aria-live="polite">
-                <!-- JS will inject cards -->
+            <div class="plan-cta-grid">
+                <a href="plan.html#premortal-heading" class="section-card plan-cta-card">
+                    <h3>Premortal Life</h3>
+                    <p>Where your story began as a spirit child of Heavenly Parents.</p>
+                </a>
+
+                <a href="plan.html#mortal-heading" class="section-card plan-cta-card">
+                    <h3>Earth Life</h3>
+                    <p>This brief but powerful time of learning, covenants, and growth.</p>
+                </a>
+
+                <a href="plan.html#spirit-heading" class="section-card plan-cta-card">
+                    <h3>Spirit World</h3>
+                    <p>Life after death, where the gospel is still preached and hope continues.</p>
+                </a>
+
+                <a href="plan.html#res-heading" class="section-card plan-cta-card">
+                    <h3>Resurrection &amp; Judgment</h3>
+                    <p>Christ’s victory over death and His loving, perfectly fair judgment.</p>
+                </a>
+
+                <a href="plan.html#kingdoms-heading" class="section-card plan-cta-card">
+                    <h3>Kingdoms of Glory</h3>
+                    <p>The eternal destinations Heavenly Father prepared for His children.</p>
+                </a>
+
+                <a href="plan.html" class="section-card plan-cta-card plan-cta-card--accent">
+                    <h3>View the Full Step-by-Step Overview</h3>
+                    <p>See all 15 principles with scriptures and insights.</p>
+                </a>
             </div>
         </section>
 
-        <!-- SCRIPTURE INSIGHTS + REFLECTION FORM (SPLIT LAYOUT) -->
         <section class="home-section home-section--split home-section--reflection"
             aria-label="Scripture insights and personal reflection">
-            <div class="card card--section scripture-insights-section" aria-labelledby="scripture-insights-heading">
+            <section class="section-card scripture-insights-section" aria-labelledby="scripture-insights-heading">
                 <h2 id="scripture-insights-heading">Scripture Insights</h2>
                 <p>
                     The Plan of Salvation becomes more powerful as we study the scriptures.
                     Click the button below to see a random scripture insight from one of the phases of the plan.
                 </p>
-                <button type="button" class="btn-primary" id="random-insight-btn">
+                <button type="button" class="button-primary" id="random-insight-btn">
                     Show a Scripture Insight
                 </button>
-            </div>
+            </section>
 
-            <section class="card card--section reflection" aria-labelledby="reflection-heading">
+            <section class="section-card reflection" aria-labelledby="reflection-heading">
                 <h2 id="reflection-heading">What Does This Plan Mean for You?</h2>
                 <p>
                     Take a moment to reflect on how the Plan of Salvation gives you hope and direction.
@@ -186,7 +206,7 @@
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary">Submit Reflection</button>
+                    <button type="submit" class="button-primary">Submit Reflection</button>
                 </form>
             </section>
         </section>
@@ -202,14 +222,14 @@
     </footer>
 
     <dialog id="scripture-modal" aria-labelledby="modal-title" aria-describedby="modal-content">
-        <form method="dialog" class="modal-inner">
-            <header class="modal-header">
+        <form method="dialog" class="dialog-inner">
+            <header class="dialog-header">
                 <h2 id="modal-title">Scripture Insight</h2>
                 <button type="submit" aria-label="Close">&times;</button>
             </header>
-            <div id="modal-content" class="modal-content"></div>
-            <footer class="modal-footer">
-                <button type="submit" class="btn-secondary">Close</button>
+            <div id="modal-content" class="dialog-content"></div>
+            <footer class="dialog-footer">
+                <button type="submit" class="button-secondary">Close</button>
             </footer>
         </form>
     </dialog>
