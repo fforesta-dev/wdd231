@@ -624,7 +624,7 @@ dialog {
 }
 
 @media (min-width: 1024px) {
-    .home-section--overview > .card:first-child {
+    .home-section--overview>.card:first-child {
         flex: 1 1 auto;
         max-width: 100%;
     }
