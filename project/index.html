@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Plan of Salvation: Our Eternal Journey</title>
+    <meta name="description"
+        content="Discover the Plan of Salvation with simple explanations, visual summaries, and scriptures that show how God’s eternal plan guides our journey back to Him.">
+    <meta name="author" content="Francesco Foresta">
+    <meta property="og:title" content="The Plan of Salvation: Our Eternal Journey">
+    <meta property="og:description" content="An uplifting, Christ-centered overview of God’s plan for His children.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fforesta-dev.github.io/wdd231/final/">
+    <meta property="og:image" content="https://fforesta-dev.github.io/wdd231/final/images/hero-plan.webp">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.mjs" type="module"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="logo-title">
+            <a href="index.html" class="site-logo" aria-label="Home">
+                <span class="logo-circle">∞</span>
+            </a>
+            <div>
+                <p class="site-name">Our Eternal Journey</p>
+                <p class="site-tagline">The Plan of Salvation</p>
+            </div>
+        </div>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul id="primary-nav">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="plan.html">The Plan</a></li>
+                <li><a href="study.html">Study &amp; Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--home">
+            <div class="hero-text">
+                <h1>The Plan of Salvation: Our Eternal Journey</h1>
+                <p>
+                    Heavenly Father has a loving plan for each of us. This site offers a simple, Christ-centered
+                    overview of the Plan of Salvation with scriptures, reflections, and visual summaries to help
+                    you understand your eternal journey.
+                </p>
+                <div class="hero-actions">
+                    <a href="#plan-grid" class="btn-primary">Explore the Plan</a>
+                    <a href="study.html" class="btn-secondary">Study &amp; Reflect</a>
+                </div>
+            </div>
+            <figure class="hero-image">
+                <img src="images/hero-plan.webp"
+                    alt="Soft sunrise over a peaceful landscape symbolizing an eternal journey" loading="lazy">
+            </figure>
+        </section>
+
+        <!-- QUICK OVERVIEW + VISIT MESSAGE + TIMELINE (SPLIT LAYOUT) -->
+        <section class="home-section home-section--split home-section--overview"
+            aria-label="Overview and timeline of the plan">
+            <div class="card card--section">
+                <h2>Why the Plan of Salvation Matters</h2>
+                <p>
+                    The Plan of Salvation answers questions like “Where did I come from?”, “Why am I here?”,
+                    and “Where am I going after this life?”. As you study, consider how Jesus Christ stands at
+                    the center of this plan and how His Atonement brings meaning and hope to every part of our journey.
+                </p>
+                <p id="visit-message" class="visit-message">
+                    <!-- JS: first visit / welcome back -->
+                </p>
+            </div>
+
+            <aside class="card card--section timeline-section" aria-labelledby="timeline-heading">
+                <h2 id="timeline-heading">Timeline of Our Eternal Journey</h2>
+                <p class="small-note">
+                    Swipe horizontally on a phone or drag with your mouse to see each step.
+                </p>
+
+                <ol class="timeline-track">
+                    <li class="timeline-item">
+                        <h3>Premortal Life</h3>
+                        <p>We lived as spirit children of Heavenly Parents and accepted the plan of happiness.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h3>Earth Life</h3>
+                        <p>We receive a body, make covenants, and learn to follow Jesus Christ by faith.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h3>Spirit World</h3>
+                        <p>After death, our spirits go to the spirit world where the gospel is preached to all.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h3>Resurrection &amp; Judgment</h3>
+                        <p>Through Christ we are resurrected and lovingly judged according to our works and desires.</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h3>Kingdoms of Glory</h3>
+                        <p>We inherit a degree of glory—celestial, terrestrial, or telestial—according to our choices.
+                        </p>
+                    </li>
+                </ol>
+            </aside>
+        </section>
+
+        <!-- DYNAMIC GRID FROM JSON -->
+        <section class="home-section" aria-labelledby="plan-grid-heading">
+            <header class="section-header">
+                <div>
+                    <h2 id="plan-grid-heading">Overview of the Plan</h2>
+                </div>
+                <div class="filter-controls">
+                    <label for="phase-filter">Filter by phase:</label>
+                    <select id="phase-filter" name="phase-filter">
+                        <option value="all">All</option>
+                        <option value="premortal">Premortal Life</option>
+                        <option value="mortal">Earth Life</option>
+                        <option value="spirit-world">Spirit World</option>
+                        <option value="resurrection">Resurrection &amp; Judgment</option>
+                        <option value="kingdoms">Kingdoms of Glory</option>
+                    </select>
+                </div>
+            </header>
+
+            <div id="plan-grid" class="plan-grid" aria-live="polite">
+                <!-- JS will inject cards -->
+            </div>
+        </section>
+
+        <!-- SCRIPTURE INSIGHTS + REFLECTION FORM (SPLIT LAYOUT) -->
+        <section class="home-section home-section--split home-section--reflection"
+            aria-label="Scripture insights and personal reflection">
+            <div class="card card--section scripture-insights-section" aria-labelledby="scripture-insights-heading">
+                <h2 id="scripture-insights-heading">Scripture Insights</h2>
+                <p>
+                    The Plan of Salvation becomes more powerful as we study the scriptures.
+                    Click the button below to see a random scripture insight from one of the phases of the plan.
+                </p>
+                <button type="button" class="btn-primary" id="random-insight-btn">
+                    Show a Scripture Insight
+                </button>
+            </div>
+
+            <section class="card card--section reflection" aria-labelledby="reflection-heading">
+                <h2 id="reflection-heading">What Does This Plan Mean for You?</h2>
+                <p>
+                    Take a moment to reflect on how the Plan of Salvation gives you hope and direction.
+                    Share a short thought below. On the Study &amp; Reflection page, you’ll see your reflection
+                    displayed.
+                </p>
+
+                <form class="reflection-form" action="form-result.html" method="get">
+                    <div class="form-field">
+                        <label for="name">First name (optional)</label>
+                        <input type="text" id="name" name="name" autocomplete="given-name">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phase">Which part of the Plan of Salvation feels most meaningful to you right
+                            now?</label>
+                        <select id="phase" name="phase" required>
+                            <option value="">Select a phase…</option>
+                            <option value="premortal">Premortal Life</option>
+                            <option value="mortal">Earth Life</option>
+                            <option value="spirit-world">Spirit World</option>
+                            <option value="resurrection">Resurrection &amp; Judgment</option>
+                            <option value="kingdoms">Kingdoms of Glory</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Your reflection (1–3 sentences)</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Reflection</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Francesco Foresta – Our Eternal Journey</p>
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="https://your-video-url-here" target="_blank" rel="noopener">Project Video</a> |
+            <a href="../index.html">WDD 231 Home</a>
+        </p>
+    </footer>
+
+    <dialog id="scripture-modal" aria-labelledby="modal-title" aria-describedby="modal-content">
+        <form method="dialog" class="modal-inner">
+            <header class="modal-header">
+                <h2 id="modal-title">Scripture Insight</h2>
+                <button type="submit" aria-label="Close">&times;</button>
+            </header>
+            <div id="modal-content" class="modal-content"></div>
+            <footer class="modal-footer">
+                <button type="submit" class="btn-secondary">Close</button>
+            </footer>
+        </form>
+    </dialog>
+
+</body>
+
+</html>

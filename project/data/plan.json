@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "order": 1,
+        "phase": "premortal",
+        "phaseLabel": "Premortal Life",
+        "title": "Spirit Children of Heavenly Parents",
+        "summary": "We lived with Heavenly Father as His spirit children before coming to earth.",
+        "scriptureRef": "Jeremiah 1:5",
+        "scriptureText": "\"Before I formed thee in the belly I knew thee...\"",
+        "insight": "You are known and loved personally by God, even before you were born."
+    },
+    {
+        "id": 2,
+        "order": 2,
+        "phase": "premortal",
+        "phaseLabel": "Premortal Life",
+        "title": "The Council in Heaven",
+        "summary": "Heavenly Father presented His plan for our happiness, centered in Jesus Christ.",
+        "scriptureRef": "Abraham 3:24–25",
+        "scriptureText": "We will make an earth whereon these may dwell...",
+        "insight": "God’s plan is intentional. Your life is part of a loving, eternal design."
+    },
+    {
+        "id": 3,
+        "order": 3,
+        "phase": "premortal",
+        "phaseLabel": "Premortal Life",
+        "title": "Agency and Choice",
+        "summary": "We were given agency to choose whether to follow Jesus Christ.",
+        "scriptureRef": "Moses 4:3",
+        "scriptureText": "Satan sought to destroy the agency of man...",
+        "insight": "Agency is a sacred gift that allows real growth and real love."
+    },
+    {
+        "id": 4,
+        "order": 4,
+        "phase": "mortal",
+        "phaseLabel": "Earth Life",
+        "title": "Birth and a Physical Body",
+        "summary": "On earth, we receive a physical body and begin a time of learning and testing.",
+        "scriptureRef": "Alma 34:32",
+        "scriptureText": "This life is the time for men to prepare to meet God...",
+        "insight": "Mortality is short but full of opportunities to grow closer to Jesus Christ."
+    },
+    {
+        "id": 5,
+        "order": 5,
+        "phase": "mortal",
+        "phaseLabel": "Earth Life",
+        "title": "Faith and Repentance",
+        "summary": "We exercise faith in Jesus Christ and repent when we fall short.",
+        "scriptureRef": "Articles of Faith 1:3",
+        "scriptureText": "We believe that through the Atonement of Christ, all mankind may be saved...",
+        "insight": "Repentance is a hopeful process that turns us back toward the Savior."
+    },
+    {
+        "id": 6,
+        "order": 6,
+        "phase": "mortal",
+        "phaseLabel": "Earth Life",
+        "title": "Covenants and Ordinances",
+        "summary": "We make sacred covenants through ordinances like baptism and confirmation.",
+        "scriptureRef": "3 Nephi 11:33–34",
+        "scriptureText": "He that believeth in me, and is baptized, the same shall be saved...",
+        "insight": "Covenants bind us to Jesus Christ and invite His power into our lives."
+    },
+    {
+        "id": 7,
+        "order": 7,
+        "phase": "mortal",
+        "phaseLabel": "Earth Life",
+        "title": "The Atonement of Jesus Christ",
+        "summary": "Christ suffered, died, and rose again to overcome sin and death.",
+        "scriptureRef": "Alma 7:11–13",
+        "scriptureText": "He will take upon him the pains and the sicknesses of his people...",
+        "insight": "Because of the Atonement, Christ understands you perfectly and can strengthen you."
+    },
+    {
+        "id": 8,
+        "order": 8,
+        "phase": "spirit-world",
+        "phaseLabel": "Spirit World",
+        "title": "Life After Death",
+        "summary": "When we die, our spirits go to the spirit world to await resurrection.",
+        "scriptureRef": "Alma 40:11–12",
+        "scriptureText": "The spirits of all men... are taken home to that God who gave them life.",
+        "insight": "Death is not the end; it is a step forward in the plan of our Heavenly Father."
+    },
+    {
+        "id": 9,
+        "order": 9,
+        "phase": "spirit-world",
+        "phaseLabel": "Spirit World",
+        "title": "Preaching the Gospel in the Spirit World",
+        "summary": "The gospel is taught to those who did not receive it in mortality.",
+        "scriptureRef": "1 Peter 4:6",
+        "scriptureText": "For for this cause was the gospel preached also to them that are dead...",
+        "insight": "God’s mercy reaches beyond the veil; all have a fair chance to accept the gospel."
+    },
+    {
+        "id": 10,
+        "order": 10,
+        "phase": "spirit-world",
+        "phaseLabel": "Spirit World",
+        "title": "Spirit Paradise and Spirit Prison",
+        "summary": "Conditions in the spirit world differ based on our choices, but progression is possible.",
+        "scriptureRef": "Doctrine and Covenants 138",
+        "scriptureText": "He went not in person among the wicked and the disobedient... but organized his forces...",
+        "insight": "Even after death, the Savior continues to bring light, hope, and opportunity."
+    },
+    {
+        "id": 11,
+        "order": 11,
+        "phase": "resurrection",
+        "phaseLabel": "Resurrection & Judgment",
+        "title": "Resurrection",
+        "summary": "Through Christ, all people will be resurrected and receive immortal bodies.",
+        "scriptureRef": "1 Corinthians 15:22",
+        "scriptureText": "For as in Adam all die, even so in Christ shall all be made alive.",
+        "insight": "Resurrection is a universal gift of grace that heals the effects of physical death."
+    },
+    {
+        "id": 12,
+        "order": 12,
+        "phase": "resurrection",
+        "phaseLabel": "Resurrection & Judgment",
+        "title": "Final Judgment",
+        "summary": "We will stand before God to be judged according to our works and the desires of our hearts.",
+        "scriptureRef": "Alma 12:14",
+        "scriptureText": "Our words will condemn us, yea, all our works will condemn us...",
+        "insight": "The judgment will be perfectly just and perfectly merciful through Jesus Christ."
+    },
+    {
+        "id": 13,
+        "order": 13,
+        "phase": "kingdoms",
+        "phaseLabel": "Kingdoms of Glory",
+        "title": "Celestial Kingdom",
+        "summary": "Those who fully accept Christ, make and keep covenants, and endure in faith receive celestial glory.",
+        "scriptureRef": "Doctrine and Covenants 76:50–53",
+        "scriptureText": "They are they who received the testimony of Jesus...",
+        "insight": "The celestial kingdom is a place of eternal family joy in the presence of Heavenly Father."
+    },
+    {
+        "id": 14,
+        "order": 14,
+        "phase": "kingdoms",
+        "phaseLabel": "Kingdoms of Glory",
+        "title": "Terrestrial Kingdom",
+        "summary": "Honorable people who did not fully accept the gospel in this life inherit terrestrial glory.",
+        "scriptureRef": "Doctrine and Covenants 76:71–79",
+        "scriptureText": "These are they who are honorable men of the earth...",
+        "insight": "God’s plan provides a degree of glory that matches each person’s desire and willingness to follow Him."
+    },
+    {
+        "id": 15,
+        "order": 15,
+        "phase": "kingdoms",
+        "phaseLabel": "Kingdoms of Glory",
+        "title": "Telestial Kingdom",
+        "summary": "Those who persist in sin but eventually accept Christ’s justice and mercy inherit telestial glory.",
+        "scriptureRef": "Doctrine and Covenants 76:81–89",
+        "scriptureText": "These are they who are liars, and sorcerers... and whoremongers...",
+        "insight": "Even the telestial kingdom is a kingdom of glory, showing the breadth of God’s mercy."
+    }
+]

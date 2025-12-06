@@ -1,0 +1,631 @@
+:root {
+    --color-primary: #1a365d;
+    --color-accent: #f6ad55;
+    --color-bg: #f7fafc;
+    --color-text: #1a202c;
+    --color-surface: #ffffff;
+
+    --font-heading: "Merriweather", serif;
+    --font-body: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --radius-lg: 1rem;
+    --radius-md: 0.75rem;
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+/* ========== HEADER & NAV ========== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #fbd38d);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.site-name {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.site-tagline {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    background: none;
+    border: 1px solid #ffffff55;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.6rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.site-nav {
+    display: none;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    background-color: #ffffff22;
+}
+
+.site-nav a.active,
+.site-nav a[aria-current="page"] {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.site-nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-primary);
+    padding: 0.5rem 0.75rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.site-nav.open li+li {
+    margin-top: 0.25rem;
+}
+
+/* ========== MAIN LAYOUT ========== */
+
+main {
+    padding: 1.25rem 1.25rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+.hero-kicker,
+.section-kicker {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4a5568;
+    margin: 0 0 0.25rem;
+}
+
+.hero {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1.5rem;
+    margin-block: 1rem 1.75rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(1.8rem, 3.1vw, 2.4rem);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+}
+
+.hero-image {
+    margin: 0;
+    justify-self: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Generic card */
+
+.card,
+.card--section,
+.plan-grid-section,
+.page-header-section,
+.phase-section,
+.study-card,
+.reflection-result {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.card+.card {
+    margin-top: 1rem;
+}
+
+/* Home sections */
+
+.home-section {
+    margin-top: 1.5rem;
+}
+
+.home-section--split {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Section headers */
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: space-between;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.filter-controls label {
+    margin-right: 0.25rem;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    border: none;
+    border-radius: 999px;
+    padding: 0.5rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    filter: brightness(0.95);
+}
+
+.btn-secondary {
+    background-color: #edf2f7;
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #e2e8f0;
+}
+
+/* Plan grid (home) */
+
+.plan-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.plan-card {
+    background-color: #fdfdfd;
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.plan-card h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+}
+
+.plan-card .phase-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4a5568;
+}
+
+.plan-card .scripture-ref {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #4a5568;
+}
+
+/* Timeline */
+
+.timeline-section {
+    padding: 1.25rem 1.5rem;
+}
+
+.timeline-track {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+}
+
+.timeline-track::-webkit-scrollbar {
+    height: 6px;
+}
+
+.timeline-track::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 999px;
+}
+
+.timeline-item {
+    min-width: 200px;
+    max-width: 240px;
+    scroll-snap-align: start;
+    background-color: #fdfdfd;
+    border-radius: var(--radius-md);
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 0.9rem;
+    flex-shrink: 0;
+}
+
+.timeline-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+/* Reflection form */
+
+.reflection-form .form-field {
+    margin-bottom: 0.75rem;
+}
+
+.reflection-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.reflection-form input,
+.reflection-form select,
+.reflection-form textarea {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e0;
+    padding: 0.5rem 0.6rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.reflection-form textarea {
+    resize: vertical;
+}
+
+/* Study and Plan pages */
+
+.page-hero {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow-soft);
+    margin-block: 1rem 1.75rem;
+}
+
+/* The row of phases becomes a simple vertical stack */
+.phase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Each phase’s internal list becomes the responsive grid */
+.plan-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.phase-section h2 {
+    margin-top: 0;
+}
+
+/* Study grid */
+
+.study-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+/* Misc */
+
+.small-note {
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+.visit-message {
+    font-style: italic;
+    margin-top: 0.75rem;
+}
+
+.reflection-result dl {
+    margin: 0;
+}
+
+.reflection-result dt {
+    font-weight: 700;
+}
+
+.reflection-result dd {
+    margin: 0 0 0.75rem;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 1rem 1.25rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.site-footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    text-decoration: underline;
+}
+
+/* Modal */
+
+dialog {
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 0;
+    max-width: 480px;
+    width: 92%;
+    box-shadow: var(--shadow-soft);
+}
+
+.modal-inner {
+    margin: 0;
+    padding: 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modal-header button {
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.modal-content {
+    padding: 1rem;
+}
+
+.modal-footer {
+    padding: 0.75rem 1rem 1rem;
+    text-align: right;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Small tablets: hero side-by-side, 2-col grids */
+@media (min-width: 640px) {
+    main {
+        padding-inline: 1.5rem;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    }
+
+    /* 2 columns for home JSON grid and study cards */
+    .plan-grid,
+    .study-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* 2 columns inside each phase on the Plan page */
+    .plan-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Medium screens: desktop nav + split sections on home */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-nav {
+        display: block;
+    }
+
+    .site-nav ul {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .site-nav.open {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    /* Home “split” sections: overview+timeline, insights+reflection */
+    .home-section--split {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .home-section--split>* {
+        flex: 1;
+    }
+}
+
+/* Large screens: 3-col grids */
+@media (min-width: 1024px) {
+
+    .plan-grid,
+    .study-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .plan-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* === HOME LAYOUT TWEAKS FOR DESKTOP === */
+@media (min-width: 1024px) {
+
+    /* Top split: skinny overview card + wide timeline */
+    .home-section--overview {
+        align-items: stretch;
+    }
+
+    .home-section--overview>.card:first-child {
+        flex: 0 0 260px;
+        /* fixed-ish sidebar width */
+        max-width: 280px;
+    }
+
+    .home-section--overview>.timeline-section {
+        flex: 1;
+        /* take the rest of the row */
+    }
+
+    /* Bottom split: smaller insights card, larger reflection form */
+    .home-section--reflection {
+        align-items: stretch;
+    }
+
+    .home-section--reflection>.scripture-insights-section {
+        flex: 0 0 340px;
+        max-width: 360px;
+    }
+
+    .home-section--reflection>.reflection {
+        flex: 1;
+    }
+
+    /* Keep the home grid at exactly 3 columns on big screens */
+    .plan-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .home-section--overview {
+        flex-direction: column !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-section--overview > .card:first-child {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+}
